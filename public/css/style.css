@@ -2,13 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 body {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    
     max-width: 1200px;
+}
+.wrapper {
+    display: flex;
+   
+    width: 100%;
+    flex-direction: column;
 }
 
 .game {
@@ -61,6 +69,68 @@ body {
     cursor: pointer;
 }
 
+
+
+
+.select-game {
+    background:#9CE2DB;
+    height: 936px;
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-family: 'Montserrat', sans-serif;
+
+}
+.select-game-title {
+ 
+    font-weight: bold;
+    font-size: 72px;
+    color: #20A899;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.navbar {
+    width: 100%;
+    height: 6.875rem;
+    background:limegreen;
+}
+.twoPlayerBtn {
+    width: 19.188rem;
+    height: 15.625rem;
+    border-radius: 30px;
+    border:none;
+    background: #EC9EB1;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    word-wrap: break-word;
+   
+}
+#playerCPUBtn {
+    width: 19.188rem;
+    height: 15.625rem;
+    border-radius: 30px;
+    border:none;
+    background: #E8EA8B;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-left: 6rem;
+    font-size: 28px;
+    word-wrap: break-word;
+    
+}
+.footer-game {
+    height: 11.688rem;
+    background: #DADCE0;
+}
+.footer-p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-left: 600px;
+    margin-top: 10%;
+    font-weight: normal;
+    color: #333941;
+}
 @media only screen and (max-width: 600px) {
     body {
         background-color: lightblue;

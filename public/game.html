@@ -13,18 +13,21 @@
 
     <div class="wrapper">
         <header>
-            <nav>
+            <nav class="navbar">
                 <a href="index.html">Home</a>
-                <a href="highscore.html">Highscore</a>
+                <a href="#">Rules</a>
+                <a href="highscore.html">Score</a>
                 <a href="game.html">Game</a>
             </nav>
         </header>
 
         <main>
             <section class="select-game">
-                <h1>Do you want to play against a friend or a computer?</h1>
+                <h1 class="select-game-title">Do you want to play against a friend or a computer?</h1>
+                <article class="sub-wrapper">
                 <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
                 <button id="playerCPUBtn">Player vs Computer</button>
+                </article>
             </section>
             <section class="enter-names">
                 <h1>Enter Player Names</h1>
@@ -100,6 +103,9 @@
             </div>
 
         </main>
+        <footer class="footer-game"> 
+            <p class="footer-p">©Copyright</p>
+        </footer>
 
     </div>
     <script src="js/game.js" type="module"></script>
