@@ -8,7 +8,73 @@ body {
     display: flex;
     justify-content: center;
     height: 100vh;
-    max-width: 1200px;
+    max-width: 1400px;
+}
+
+.home__wrapper {
+    background-color: #9CE2DB;
+   
+
+   
+}
+header {
+   
+    height: 80px;
+    background-color: #C8E0C0;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    
+   
+}
+.header__home a {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-weight: 600;
+}
+
+.navbar {
+display: flex;
+gap: 2rem;
+padding-top: 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-weight: 600;
+}
+.home__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main__h1 {
+    font-size: 84px;
+     font-family: 'Montserrat', sans-serif;
+     color: #42c3b5;
+     padding: 120px;
+}
+
+.play__now {
+    width: 307px;
+    height: 80px;
+    border-radius: 30px;
+    background-color: #e8ea8b;
+  border: none;
+}
+
+.play__now a {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    text-decoration: none;
 }
 
 .game {
