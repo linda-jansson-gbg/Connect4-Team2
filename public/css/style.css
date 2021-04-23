@@ -119,18 +119,7 @@ body {
     word-wrap: break-word;
     
 }
-.footer-game {
-    height: 11.688rem;
-    background: #DADCE0;
-}
-.footer-p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    margin-left: 600px;
-    margin-top: 10%;
-    font-weight: normal;
-    color: #333941;
-}
+
 @media only screen and (max-width: 600px) {
     body {
         background-color: lightblue;
