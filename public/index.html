@@ -8,28 +8,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <body onload="countdown()">
-    <div class="wrapper">
+
+    <section class="home__wrapper">
         <header> 
-        <nav>
-            <a href="index.html">Home</a>
+            <h1 class="header__home">
+                <a href="#">Home</a>
+            </h1>
+
+        <nav class="navbar">
+            <a href="index.html">Rules</a>
             <a href="highscore.html">Highscore</a>
             <a href="game.html">Game</a>
         </nav>
-           
         </header>
 
-        <main>
-            <h1> Welcome to Connect 4 </h1>
-            <p> Did you know, that.... </p>
-            <p> Did you know, that.... </p>
-            <p> Did you know, that.... </p>
-            <p> Did you know, that.... </p>
-            
-            <button> read more </button>
-            <a href="game.html" > Click to Start </a>
+        <main class="home__main">
+            <h1 class="main__h1">Connect 4</h1>
+            <button class="play__now"> <a href="game.html"> Play Now</a></button>
         </main>
-    </div>
+    </section>
+
+
 
     <script src="js/main.js" type="module"></script>
 </body>
