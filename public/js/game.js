@@ -1,3 +1,7 @@
+import Board from "./Board.js"
+
+let board = new Board()
+
 // Selectors
 const gameTable = document.querySelector('.game')
 const tableRow = document.getElementsByTagName('tr')
