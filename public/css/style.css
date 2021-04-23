@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -77,12 +77,69 @@ padding-top: 5px;
     text-decoration: none;
 }
 
+.game {
+    display: none;
+}
 
+.game--board {
+    /*position: absolute;
+    top: 8rem;
+    left: 50%;
+    transform: translate(-50%);
+    height: 340px;
+    width: 386px;*/
+    background-color: #9CE2DB;
+    border: 1px solid black;
+    padding: 1rem;
+}
 
+.enter-names {
+    display: none;
+}
 
+.slot {
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 0.3rem;
+}
+
+.slot--pink {
+    background: linear-gradient(180deg, #ffffff 6.25%, #f4a5b8 44.27%);
+    border: 6px solid #ec9eb1;
+}
+
+.slot--yellow {
+    background: linear-gradient(180deg, #ffffff 6.25%, #e8ea8b 44.27%);
+    border: 6px solid #e8ea8b;
+}
+
+.reset {
+    /*position: absolute;
+    top: 60vh;
+    left: 50%;
+    transform: translate(-50%);*/
+    border: 1px solid black;
+    width: 5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.restart {
+    /*position: absolute;
+    top: 60vh;
+    left: 50%;
+    transform: translate(-50%);*/
+    border: 1px solid black;
+    width: 5rem;
+    text-align: center;
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 600px) {
     body {
-      background-color: lightblue;
+        background-color: lightblue;
     }
-  }
+}
