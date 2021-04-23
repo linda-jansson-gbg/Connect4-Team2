@@ -6,17 +6,23 @@ const tableSlot = document.querySelectorAll('.slot')
 const twoPlayerBtn = document.querySelector('#twoPlayerBtn')
 // const playerCPUBtn = document.querySelector('#playerCPUBtn')
 const startGameBtn = document.querySelector('#startGameBtn')
+
 let player1 = ''
 let player2 = ''
 let winner = false
 const playerTurn = document.querySelector('.player-turn')
 const reset = document.querySelector('.reset')
 
+
 /*let count
 count = 20
 const timeElem = document.getElementById('clock')
 const timerUnit = setInterval(countdown, 1000)
 countdown();
+let count
+count = 20
+const timeElem = document.getElementById('clock')
+const timerUnit = setInterval(countdown, 1000)
 
 function countdown () {
   if (count === 0) {
@@ -38,6 +44,7 @@ function timeupMessage () {
   document.getElementById('end-statement').innerText = '🤭 You ran out of time. ⌛'
   clearInterval(timerUnit)
 }*/
+
 
 for (let i = 0; i < tableCell.length; i++) {
   tableCell[i].addEventListener('click', (e) => {
