@@ -72,6 +72,7 @@ body {
 
 
 
+
 .select-game {
     background:#9CE2DB;
     height: 936px;
@@ -118,6 +119,17 @@ body {
     font-size: 28px;
     word-wrap: break-word;
     
+}
+.restart {
+    /*position: absolute;
+    top: 60vh;
+    left: 50%;
+    transform: translate(-50%);*/
+    border: 1px solid black;
+    width: 5rem;
+    text-align: center;
+    cursor: pointer;
+
 }
 
 @media only screen and (max-width: 600px) {

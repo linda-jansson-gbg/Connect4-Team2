@@ -6,11 +6,38 @@ const tableSlot = document.querySelectorAll('.slot')
 const twoPlayerBtn = document.querySelector('#twoPlayerBtn')
 // const playerCPUBtn = document.querySelector('#playerCPUBtn')
 const startGameBtn = document.querySelector('#startGameBtn')
+
 let player1 = ''
 let player2 = ''
 let winner = false
 const playerTurn = document.querySelector('.player-turn')
 const reset = document.querySelector('.reset')
+
+let count
+count = 20
+const timeElem = document.getElementById('clock')
+const timerUnit = setInterval(countdown, 1000)
+
+function countdown () {
+  if (count === 0) {
+    clearTimeout(timerUnit)
+    clearInterval(timerUnit)
+    timeupMessage()
+  } else if (count === 1) {
+    timeElem.innerHTML = count + ' second remaining'
+    count--
+  } else {
+    timeElem.innerHTML = count + ' seconds remaining'
+    count--
+  }
+}
+
+// Timeup message
+function timeupMessage () {
+  timeElem.innerText = ''
+  document.getElementById('end-statement').innerText = '🤭 You ran out of time. ⌛'
+  clearInterval(timerUnit)
+}
 
 for (let i = 0; i < tableCell.length; i++) {
   tableCell[i].addEventListener('click', (e) => {
@@ -161,7 +188,7 @@ function changeColor (e) {
 reset.addEventListener('click', () => {
   tableSlot.forEach(slot => {
     slot.style.backgroundColor = 'white'
+    document.getElementById('end-statement').innerText = ''
+    count = 20
   })
-  // return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` :
-  // playerTurn.textContent = `${player2}'s turn`)
 })
