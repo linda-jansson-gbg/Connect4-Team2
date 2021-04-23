@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,109 @@
     <title>Game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <div class="wrapper">
-        <header> 
-        <nav>
-            <a href="/public/index.html">Home</a>
-            <a href="/public/about.html">About</a>
-            <a href="/public/rules.html">Rules</a>
-            <a href="/public/highscore.html">Highscore</a>
-            <a href="/public/game.html">Game</a>
-        </nav>
-           
+        <header>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="#">Rules</a>
+                <a href="highscore.html">Score</a>
+                <a href="game.html">Game</a>
+            </nav>
         </header>
 
         <main>
-           <h1> Player </h1>
-            <button> 2 players </button>
-            <button> against a computer </button>
+            <section class="select-game">
+                <h1 class="select-game-title">Do you want to play against a friend or a computer?</h1>
+                <article class="sub-wrapper">
+                <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
+                <button id="playerCPUBtn">Player vs Computer</button>
+                </article>
+            </section>
+            <section class="enter-names">
+                <h1>Enter Player Names</h1>
+                <label for="player1">Player 1</label>
+                <input type="text" id="player1">
+                <label for="player2">Player 2</label>
+                <input type="text" id="player2">
+                <button id="startGameBtn">Play Now</button>
+            </section>
+
+            <div class="game">
+                <div class="game--board">
+                    <table>
+                        <tr>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                        </tr>
+                        <tr>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                        </tr>
+                        <tr>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                        </tr>
+                        <tr>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                        </tr>
+                        <tr>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                        </tr>
+                        <tr>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                            <td class="slot"></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <p class="end-statement" id="end-statement"></p>
+                <span id="clock" class="clock"></span>
+                <h3 class="player-turn"></h3>
+                <div class="reset">Rematch</div>
+                <button class="restart" id="restart" onClick="document.location.reload(true)">Start Over</div>
+            </div>
+
         </main>
-
-
+      
 
     </div>
+    <script src="js/game.js" type="module"></script>
 
-<script src="./js/index.js"></script>
 </body>
+
 </html>
