@@ -9,6 +9,7 @@ export default class Slot {
         this.id = `slot-${x}-${y}`;
         this.token = null;
     }
+
     render() {
         return `
           <div class="slot"></div>
