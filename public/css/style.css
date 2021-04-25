@@ -91,6 +91,9 @@ padding-top: 5px;
     background-color: #9CE2DB;
     border: 1px solid black;
     padding: 1rem;
+    display: grid;
+    grid-template-columns: 2;
+    grid-auto-flow: column;
 }
 
 .enter-names {
@@ -104,6 +107,8 @@ padding-top: 5px;
     border: 1px solid black;
     border-radius: 50%;
     padding: 0.3rem;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .slot--pink {
@@ -137,6 +142,8 @@ padding-top: 5px;
     text-align: center;
     cursor: pointer;
 }
+
+
 
 @media only screen and (max-width: 600px) {
     body {

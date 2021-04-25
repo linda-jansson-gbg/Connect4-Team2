@@ -1,4 +1,4 @@
-import Board from "./Board.js"
+import Board from './Board.js'
 
 let board = new Board()
 
@@ -16,7 +16,6 @@ let player2 = ''
 let winner = false
 const playerTurn = document.querySelector('.player-turn')
 const reset = document.querySelector('.reset')
-
 
 /*let count
 count = 20
@@ -49,19 +48,18 @@ function timeupMessage () {
   clearInterval(timerUnit)
 }*/
 
-
 for (let i = 0; i < tableCell.length; i++) {
-  tableCell[i].addEventListener('click', (e) => {
+  tableCell[i].addEventListener('click', e => {
     console.log(`${e.target.parentElement.rowIndex}, ${e.target.cellIndex}`)
   })
 }
 
-twoPlayerBtn.addEventListener('click', (e) => {
+twoPlayerBtn.addEventListener('click', e => {
   document.querySelector('.enter-names').style.display = 'block'
   document.querySelector('.select-game').style.display = 'none'
 })
 
-startGameBtn.addEventListener('click', (e) => {
+startGameBtn.addEventListener('click', e => {
   console.log('start game')
   player1 = document.querySelector('#player1').value
   player2 = document.querySelector('#player2').value
@@ -77,7 +75,7 @@ const player2Color = '#E8EA8B'
 
 let currentPlayer = 1
 
-Array.prototype.forEach.call(tableCell, (cell) => {
+Array.prototype.forEach.call(tableCell, cell => {
   cell.addEventListener('click', changeColor)
   cell.style.backgroundColor = 'white'
 })
@@ -92,7 +90,12 @@ function changeColor (e) {
         console.log('currentPlayer', currentPlayer)
         if (currentPlayer === 1) {
           row[0].style.background = player1Color
-          if (horizontalCheck() || verticalCheck() || diagonalCheck1() || diagonalCheck2()) {
+          if (
+            horizontalCheck() ||
+            verticalCheck() ||
+            diagonalCheck1() ||
+            diagonalCheck2()
+          ) {
             playerTurn.textContent = `${player1} Wins`
             winner = true
           } else if (drawCheck()) {
@@ -105,7 +108,12 @@ function changeColor (e) {
           }
         } else {
           row[0].style.backgroundColor = player2Color
-          if (horizontalCheck() || verticalCheck() || diagonalCheck1() || diagonalCheck2()) {
+          if (
+            horizontalCheck() ||
+            verticalCheck() ||
+            diagonalCheck1() ||
+            diagonalCheck2()
+          ) {
             playerTurn.textContent = `${player2} Wins`
             winner = true
           } else if (drawCheck()) {
@@ -122,17 +130,20 @@ function changeColor (e) {
   }
 
   function colorMatchCheck (one, two, three, four) {
-    return (one === two && one === three && one === four && one !== 'white')
+    return one === two && one === three && one === four && one !== 'white'
   }
 
   function horizontalCheck () {
     for (let row = 0; row < tableRow.length; row++) {
       for (let col = 0; col < 4; col++) {
-        if (colorMatchCheck(
-          tableRow[row].children[col].style.backgroundColor,
-          tableRow[row].children[col + 1].style.backgroundColor,
-          tableRow[row].children[col + 2].style.backgroundColor,
-          tableRow[row].children[col + 3].style.backgroundColor)) {
+        if (
+          colorMatchCheck(
+            tableRow[row].children[col].style.backgroundColor,
+            tableRow[row].children[col + 1].style.backgroundColor,
+            tableRow[row].children[col + 2].style.backgroundColor,
+            tableRow[row].children[col + 3].style.backgroundColor
+          )
+        ) {
           return true
         }
       }
@@ -142,11 +153,14 @@ function changeColor (e) {
   function verticalCheck () {
     for (let col = 0; col < 7; col++) {
       for (let row = 0; row < 3; row++) {
-        if (colorMatchCheck(
-          tableRow[row].children[col].style.backgroundColor,
-          tableRow[row + 1].children[col].style.backgroundColor,
-          tableRow[row + 2].children[col].style.backgroundColor,
-          tableRow[row + 3].children[col].style.backgroundColor)) {
+        if (
+          colorMatchCheck(
+            tableRow[row].children[col].style.backgroundColor,
+            tableRow[row + 1].children[col].style.backgroundColor,
+            tableRow[row + 2].children[col].style.backgroundColor,
+            tableRow[row + 3].children[col].style.backgroundColor
+          )
+        ) {
           return true
         }
       }
@@ -156,11 +170,14 @@ function changeColor (e) {
   function diagonalCheck1 () {
     for (let col = 0; col < 4; col++) {
       for (let row = 0; row < 3; row++) {
-        if (colorMatchCheck(
-          tableRow[row].children[col].style.backgroundColor,
-          tableRow[row + 1].children[col + 1].style.backgroundColor,
-          tableRow[row + 2].children[col + 2].style.backgroundColor,
-          tableRow[row + 3].children[col + 3].style.backgroundColor)) {
+        if (
+          colorMatchCheck(
+            tableRow[row].children[col].style.backgroundColor,
+            tableRow[row + 1].children[col + 1].style.backgroundColor,
+            tableRow[row + 2].children[col + 2].style.backgroundColor,
+            tableRow[row + 3].children[col + 3].style.backgroundColor
+          )
+        ) {
           return true
         }
       }
@@ -170,11 +187,14 @@ function changeColor (e) {
   function diagonalCheck2 () {
     for (let col = 0; col < 4; col++) {
       for (let row = 5; row > 2; row--) {
-        if (colorMatchCheck(
-          tableRow[row].children[col].style.backgroundColor,
-          tableRow[row - 1].children[col + 1].style.backgroundColor,
-          tableRow[row - 2].children[col + 2].style.backgroundColor,
-          tableRow[row - 3].children[col + 3].style.backgroundColor)) {
+        if (
+          colorMatchCheck(
+            tableRow[row].children[col].style.backgroundColor,
+            tableRow[row - 1].children[col + 1].style.backgroundColor,
+            tableRow[row - 2].children[col + 2].style.backgroundColor,
+            tableRow[row - 3].children[col + 3].style.backgroundColor
+          )
+        ) {
           return true
         }
       }
@@ -202,7 +222,8 @@ reset.addEventListener('click', () => {
     winner = false
     //document.getElementById('end-statement').innerText = ''
     //count = 20
-      return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` :
-       playerTurn.textContent = `${player2}'s turn`)
+    return currentPlayer === 1
+      ? (playerTurn.textContent = `${player1}'s turn`)
+      : (playerTurn.textContent = `${player2}'s turn`)
   })
 })
