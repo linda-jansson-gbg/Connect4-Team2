@@ -7,9 +7,9 @@ class Space {
       this.token = null;
     }
 
-    render(){
-      return `
-      <div class="slot"></div>
-      `
-    }
+    // render(){
+    //   return `
+    //   <div class="slot"></div>
+    //   `
+    // }
 }

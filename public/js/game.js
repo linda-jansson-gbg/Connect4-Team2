@@ -1,9 +1,9 @@
 class Game {
 
-  constructor() {
+  constructor(player1, player2) {
       console.log("Game created")
       this.board = new Board()
-      this.players = this.createPlayers()
+      this.players = this.createPlayers(player1, player2)
      // this.ready = false;                
   }
 
@@ -12,29 +12,23 @@ class Game {
    * @return {Array} An array of two Player objects.
    */
 
-  createPlayers() {
+  createPlayers(player1, player2) {
       // new players instantiated
-      console.log('in player class');
-  
-     let player1 = document.querySelector('#player1').value
-     let player2 = document.querySelector('#player2').value
-
-     console.log(player1)
-     console.log(player2)
-
-      const players = [new Player(player1, 1, "#e15258", true),
-                       new Player(player2, 2, "#e59a13")]
+      console.log('in player class')
+      console.log(player1, player2)
+      const players = [new Player(player1, 1, "#f4a5b8", true),
+                       new Player(player2, 2, "#e8ea8b")]
       return players;
 
   }
 
   getActivePlayer(){
-     return this.players.find(player=>player.active)
+     return this.players.find(player => player.active)
   }
 
   switchPlayer(){
       for(const player of this.players){
-          player.active=!player.active
+          player.active = !player.active
       }
    }
 }

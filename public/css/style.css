@@ -225,14 +225,16 @@ background: #DADCE0;
     margin-top: 5px;
 }
 
-.slot--pink {
+/* .slot--pink {
     background: linear-gradient(180deg, #ffffff 6.25%, #f4a5b8 44.27%);
     border: 6px solid #ec9eb1;
-}
+} */
 
-.slot--yellow {
-    background: linear-gradient(180deg, #ffffff 6.25%, #e8ea8b 44.27%);
-    border: 6px solid #e8ea8b;
+.token{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
 .reset {
