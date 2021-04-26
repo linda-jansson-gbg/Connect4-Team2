@@ -6,12 +6,12 @@ const tableSlot = document.querySelectorAll('.slot')
 const twoPlayerBtn = document.querySelector('#twoPlayerBtn')
 // const playerCPUBtn = document.querySelector('#playerCPUBtn')
 const startGameBtn = document.querySelector('#startGameBtn')
-
+const winnerOverlay = document.querySelector('#winner-overlay')
 let player1 = ''
 let player2 = ''
 let winner = false
 const playerTurn = document.querySelector('.player-turn')
-const reset = document.querySelector('.reset')
+const reset = document.querySelector('#reset')
 
 
 /*let count
@@ -68,6 +68,8 @@ startGameBtn.addEventListener('click', (e) => {
   gameTable.style.display = 'block'
 })
 
+let nrOfMoves1 = 0
+let nrOfMoves2 = 0
 const player1Color = '#EC9EB1'
 const player2Color = '#E8EA8B'
 
@@ -78,7 +80,7 @@ Array.prototype.forEach.call(tableCell, (cell) => {
   cell.style.backgroundColor = 'white'
 })
 
-function changeColor (e) {
+function changeColor(e) {
   const column = e.target.cellIndex
   const row = []
   if (!winner) {
@@ -86,11 +88,16 @@ function changeColor (e) {
       if (tableRow[i].children[column].style.backgroundColor === 'white') {
         row.push(tableRow[i].children[column])
         console.log('currentPlayer', currentPlayer)
+        
+        
         if (currentPlayer === 1) {
+          nrOfMoves1++
+          console.log('nrOfMoves1 of player 1', nrOfMoves1)
           row[0].style.background = player1Color
           if (horizontalCheck() || verticalCheck() || diagonalCheck1() || diagonalCheck2()) {
             playerTurn.textContent = `${player1} Wins`
             winner = true
+            setTimeout(function(){ showWinnerOverlay(); }, 3000)
           } else if (drawCheck()) {
             playerTurn.textContent = 'Game is a draw'
             winner = true
@@ -100,6 +107,8 @@ function changeColor (e) {
             return currentPlayer
           }
         } else {
+          nrOfMoves2++
+          console.log('nrOfMoves2 of player 2', nrOfMoves2)
           row[0].style.backgroundColor = player2Color
           if (horizontalCheck() || verticalCheck() || diagonalCheck1() || diagonalCheck2()) {
             playerTurn.textContent = `${player2} Wins`
@@ -115,6 +124,10 @@ function changeColor (e) {
         }
       }
     }
+  }
+
+  function showWinnerOverlay() {
+    winnerOverlay.style.visibility = "visible"
   }
 
   function colorMatchCheck (one, two, three, four) {
@@ -191,14 +204,19 @@ function changeColor (e) {
     }
   }
 }
-
+// Function for when the players want a rematch 
 reset.addEventListener('click', () => {
+  // Change the color of the slots to white
   tableSlot.forEach(slot => {
     slot.style.backgroundColor = 'white'
+    // Set the winner to false
     winner = false
-    //document.getElementById('end-statement').innerText = ''
-    //count = 20
-      return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` :
+      //document.getElementById('end-statement').innerText = ''
+      //count = 20
+    // Hide the winner overlay
+    winnerOverlay.style.visibility = 'hidden'
+    // Set the current player back to 1 and change the text
+    return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` :
        playerTurn.textContent = `${player2}'s turn`)
   })
 })
