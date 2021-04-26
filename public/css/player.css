@@ -1,0 +1,25 @@
+.select-game {
+  display: flex;
+  align-items: center;
+}
+.player__h1 {
+  font-size: 72px;
+  font-family: 'Montserrat', sans-serif;
+  color: #42c3b5;
+}
+
+.twoPlayerBtn {
+  width: 307px;
+  height: 250px;
+  border-radius: 30px;
+  border: none;
+  background-color: pink;
+}
+
+#playerCPUBtn {
+  width: 307px;
+  height: 250px;
+  border-radius: 30px;
+  border: none;
+  background-color: #e8ea8b;
+}

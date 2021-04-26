@@ -45,12 +45,27 @@ header {
   width: 300px;
   transform: rotate(-10deg);
 }
+.artwork-robot-gamepage {
+  margin-right: 70%;
+  width: 300px;
+  transform: rotate(-10deg);
+  position: absolute;
+  margin-top: 55%;
+}
 
 .artwork-person {
   margin-left: 70%;
   transform: translateY(-110%);
   z-index: -2;
   width: 300px;
+}
+.artwork-twopeople {
+ margin-left: 1030px;
+  margin-top: 5%;
+width: 300px;
+position: relative;
+margin-bottom: 5%;
+
 }
 
 .down-arrow {
@@ -185,6 +200,8 @@ header {
   left: -9px;
   top: 3578px;
   background: #dadce0;
+ display: block;
+ margin-bottom: 0;
 }
 
 .game__button {
@@ -202,6 +219,58 @@ header {
   bottom: 0;
   margin-top: 150px;
 }
+
+/* Game page CSS */
+
+
+.player__h1 {
+  font-size: 72px;
+  font-family: 'Montserrat', sans-serif;
+  color: #42c3b5;
+}
+
+.twoPlayerBtn {
+  width: 307px;
+  height: 250px;
+  border-radius: 30px;
+  border: none;
+  background-color: pink;
+  font-size: 28px;
+  padding: 40px 100px 40px 100px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#playerCPUBtn {
+  width: 307px;
+  height: 250px;
+  border-radius: 30px;
+  border: none;
+  background-color: #e8ea8b;
+  font-size: 28px;
+  padding: 40px 100px 40px 100px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+.select__player_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin-top: 35%;
+}
+
+.twoPlayerBtn:hover {
+  transform: scale(1.1);
+}
+
+
+.playerCPUBtn:hover {
+  transform: scale(1.1);
+}
+
+
+ 
+/* Game page ends here */
 
 .game--board {
   /*position: absolute;
