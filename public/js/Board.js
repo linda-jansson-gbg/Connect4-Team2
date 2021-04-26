@@ -10,7 +10,6 @@ export default class Board {
   //  this.start();
 
   createSlots () {
-    
     const slots = []
     for (let x = 0; x < this.rows; x++) {
       const columns = []
@@ -19,7 +18,7 @@ export default class Board {
         const slot = new Slot(x, y)
         columns.push(slot)
       }
-      
+
       slots.push(columns)
     }
     const div = document.querySelector('.game--board')
@@ -28,7 +27,6 @@ export default class Board {
       gameBoardStr = gameBoardStr.concat('<div>')
       for (const slot of slotArray) {
         gameBoardStr = gameBoardStr.concat(slot.render())
-        
       }
       gameBoardStr = gameBoardStr.concat('</div>')
     }

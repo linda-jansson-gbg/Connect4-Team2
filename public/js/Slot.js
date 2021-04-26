@@ -11,5 +11,4 @@ export default class Slot {
           <div class="slot"></div>
         `
   }
-
 }
