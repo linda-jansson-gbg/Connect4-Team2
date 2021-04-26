@@ -159,7 +159,11 @@ z-index: 999;
     
 
 }
-
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .footer {
     grid-area: footer;
   
@@ -196,6 +200,7 @@ background: #DADCE0;
     transform: translate(-50%);
     height: 340px;
     width: 386px;*/
+    display: flex;
     width: fit-content;
     background-color: #9CE2DB;
     border: 1px solid black;
