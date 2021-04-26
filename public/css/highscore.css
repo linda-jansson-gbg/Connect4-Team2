@@ -30,7 +30,6 @@ header {
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
-  width: inherit;
 }
 .navbar a:first-child {
   margin-right: auto;
