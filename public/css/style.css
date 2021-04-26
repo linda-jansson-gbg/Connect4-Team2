@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,37 +9,55 @@ body {
     display: flex;
     justify-content: center;
     height: 100vh;
-    max-width: 1400px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .home__wrapper {
     background-color: #9CE2DB;
-   
-
-   
+     display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  grid-template-areas: 
+  "nav-container nav-container nav-container nav-container nav-container nav-container"
+  "header header header header header header"
+  "about about about about about about"
+  "rules rules rules rules rules rules"
+  "gamebutton gamebutton gamebutton gamebutton gamebutton gamebutton"
+  "footer footer footer footer footer footer"
+    
 }
-header {
    
-    height: 80px;
-    background-color: #C8E0C0;
+header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 18px;
+    grid-area: header;
+    width: 100vw;
     
    
 }
-.header__home a {
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    color: black;
-    font-weight: 600;
+
+.nav-container {
+    grid-area: nav-container;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C8E0C0;
+    height: 102px;
+    
 }
 
 .navbar {
 display: flex;
+justify-content: flex-end;
+width: 92%;
 gap: 2rem;
 padding-top: 5px;
+grid-area: navbar;
+position: absolute;
+z-index: 999;
 }
 
 .navbar a {
@@ -47,6 +66,9 @@ padding-top: 5px;
     font-family: 'Montserrat', sans-serif;
     color: black;
     font-weight: 600;
+}
+.deafult {
+    margin-right: 70%;
 }
 .home__main {
     display: flex;
@@ -59,7 +81,8 @@ padding-top: 5px;
     font-size: 84px;
      font-family: 'Montserrat', sans-serif;
      color: #42c3b5;
-     padding: 120px;
+     padding: 80px;
+
 }
 
 .play__now {
@@ -68,6 +91,7 @@ padding-top: 5px;
     border-radius: 30px;
     background-color: #e8ea8b;
   border: none;
+  margin-bottom: 80px;
 }
 
 .play__now a {
@@ -77,8 +101,92 @@ padding-top: 5px;
     text-decoration: none;
 }
 
-.game {
-    display: none;
+.about {
+    grid-area: about;
+    background-color: white;
+    margin-bottom: 80px;
+    
+}
+.about__h1 {
+     font-size: 50px;
+     font-family: 'Montserrat', sans-serif;
+     color: #42c3b5;
+     text-align: center;
+     margin-top: 100px;
+     margin-bottom: 70px;
+}
+.about__text {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-weight: lighter;
+    font-size: 28px;
+    line-height: 54px;
+}
+
+.rules {
+    grid-area: rules;
+    background-color: #9CE2DB;
+}
+.rules__h1 {
+    font-size: 50px;
+     font-family: 'Montserrat', sans-serif;
+     color: #42c3b5;
+     text-align: center;
+     margin-top: 100px;
+     margin-bottom: 70px;
+}
+
+.rules__text {
+     margin-left: 20%;
+    margin-right: 20%;
+    font-weight: lighter;
+    font-size: 28px;
+    line-height: 54px;
+
+}
+
+.good__luck_text {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-weight: lighter;
+    font-size: 28px;
+    line-height: 54px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.game__button {
+    grid-area: gamebutton;
+    
+
+}
+
+.footer {
+    grid-area: footer;
+  
+width: 1490px;
+height: 240px;
+left: -9px;
+top: 3578px;
+
+background: #DADCE0;
+}
+
+.game__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    width: 100vw;
+    margin-top: 50px;
+    
+}
+
+.copyright {
+    text-align: center;
+    bottom: 0;
+    margin-top: 150px;
+    
 }
 
 .game--board {
