@@ -1,4 +1,3 @@
-
 class Board {
 
   constructor(){
@@ -12,20 +11,32 @@ class Board {
    * @return {Array} An array of space objects
    */
   createSpaces() {
-      const spaces = [];
-      for (let x = 0; x < this.rows; x++){
-          const column = [];
-          
-          for (let y = 0; y < this.columns; y++){
-              const space= new Space(x,y);
-              column.push(space);
-          }
 
-          spaces.push(column);
+      const spaces = []
+      for (let x = 0; x < this.rows; x++) {
+        const columns = []
+  
+        for (let y = 0; y < this.columns; y++) {
+          const space = new Space(x, y)
+          columns.push(space)
+        }
+  
+        spaces.push(columns)
       }
-      
-      return spaces;
-  }
+
+      const div = document.querySelector('.game--board')
+      let gameBoardStr = ''
+      for (const spaceArray of spaces) {
+        gameBoardStr = gameBoardStr.concat('<div>')
+        for (const space of spaceArray) {
+          gameBoardStr = gameBoardStr.concat(space.render())
+        }
+        gameBoardStr = gameBoardStr.concat('</div>')
+      }
+      div.innerHTML = gameBoardStr
+  
+      return spaces
+    }
 
   columnIsFull(column){
       let counter=0;
@@ -51,43 +62,8 @@ class Board {
    
   }
 
-  evaluate(playerId){
-      let consecutiveRows=0
-      let consecutiveColumn=0
-      let consecutiveDiagnoalLR=0
-      let consecutiveDiagnoalRL=0
-
-     
-
-      for(let row=0;row< this.rows;row++){
-           
 
 
-          for(let column=0;column < this.columns;column++){
-             
-               //check rows
-               if(row+3<this.rows){
-                  console.log("row",row);
-                  if( this.spaces[row][column].token&&  this.spaces[row][column].token.owner.id==playerId){
-                      console.log("row",row);
-                      for(let nextRow=row+1;nextRow< row+4;nextRow++){
-                          
-                          console.log("nextRow",nextRow);
-                          if( this.spaces[nextRow][column].token&&  this.spaces[nextRow][column].token.owner.id==playerId){
-                               //token exist
-                               
-                          }else{
-                              break;
-                          }
-                          console.log("Win");
-                      }
-                  }
-                 
-              }
-          }
-      }
-
-  }
 }
 
 /*

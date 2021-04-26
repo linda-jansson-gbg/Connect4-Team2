@@ -1,5 +1,4 @@
 
-let game = new Game()
 
 // Selectors
 const gameTable = document.querySelector('.game')
@@ -16,22 +15,22 @@ let winner = false
 const playerTurn = document.querySelector('.player-turn')
 const reset = document.querySelector('#reset')
 
+let game = new Game()
 
   const renderGame = () => {
-console.log(game.board.rows);
- //   renderBoard(game.board)
-    renderCurrentPlayer(game.players)
+    console.log(game.board.rows);
+ renderBoard(game.board)
+ renderCurrentPlayer(game.players)
 }
 
 const renderCurrentPlayer = (players) => {
   console.log('our players:', players);
     document.querySelector('.enter-names').style.display = 'none'
-const activePlayer = players.player.active
+const activePlayer = game.getActivePlayer().name
 console.log('active player:', activePlayer)
-     playerTurn.textContent = `${activePlayer.name}'S turn!`
+     playerTurn.textContent = `${activePlayer}'S turn!`
     gameTable.style.display = 'block'
 }
-
 
 
 /*let count

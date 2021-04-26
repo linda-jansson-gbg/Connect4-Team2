@@ -14,17 +14,16 @@ class Game {
 
   createPlayers() {
       // new players instantiated
-    //   console.log('in player class');
-    //   let player1 = ''
-    //   let player2 = ''
-    //   player1 = document.querySelector('#player1').value
-    //   player2 = document.querySelector('#player2').value
+      console.log('in player class');
+  
+     let player1 = document.querySelector('#player1').value
+     let player2 = document.querySelector('#player2').value
 
-    //  console.log(player1)
-    //  console.log(player2)
+     console.log(player1)
+     console.log(player2)
 
-      const players = [new Player("player1", 1, "#e15258", true),
-                       new Player("player2", 2, "#e59a13")]
+      const players = [new Player(player1, 1, "#e15258", true),
+                       new Player(player2, 2, "#e59a13")]
       return players;
 
   }
