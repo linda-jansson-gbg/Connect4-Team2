@@ -8,9 +8,28 @@
     <title>Game</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/winneroverlay.css">
+
 </head>
 
 <body>
+
+<div class="home-wrapper">
+      <div class="navcontainer">
+        <nav class="navbar">
+          <a class="deafult" href="#">Home</a>
+          <a    href="#anchor-rules">Rules</a>
+          <a href="highscore.html">Highscore</a>
+          <a href="game.html">Game</a>
+        </nav>
+      </div>
+ 
+      <header>  
+          <h1 class="main__h1">Do you want to play against a friend or a computer?</h1>
+          <section class="select__player_container">
+         <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
+                <button id="playerCPUBtn">Player vs Computer</button>
+                </section>
+
 
     <div class="wrapper">
         <header>
@@ -19,14 +38,15 @@
                 <a href="highscore.html">Highscore</a>
                 <a href="game.html">Game</a>
             </nav>
-        </header>
 
-        <main>
-            <section class="select-game">
-                <h1>Do you want to play against a friend or a computer?</h1>
-                <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
-                <button id="playerCPUBtn">Player vs Computer</button>
-            </section>
+        </header>
+        <img class="artwork-robot-gamepage" src="assets/Artwork_robot.svg"></svg>
+        <img class="artwork-twopeople" src="assets/Artwork_twopeople.svg">
+
+           <footer class="footer">
+        <p class="copyright">@Copyright</p>
+      </footer>
+            </div>
             <section class="enter-names">
                 <h1>Enter Player Names</h1>
                 <label for="player1">Player 1</label>
