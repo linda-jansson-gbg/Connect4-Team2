@@ -56,3 +56,6 @@ h2 {
 .btn--yellow {
   background-color: #e8ea8b;
 }
+.game {
+  display: none;
+}
