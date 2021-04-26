@@ -5,6 +5,7 @@ export default class Board {
     this.rows = 6
     this.columns = 7
     this.slots = this.createSlots()
+    console.log(this.slots)
   }
   //  this.start();
 
