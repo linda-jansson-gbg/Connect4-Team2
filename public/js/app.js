@@ -22,6 +22,70 @@ twoPlayerBtn.addEventListener('click', (e) => {
   })
 
 
+let game = new Game()
+
+const renderGame = () => {
+  console.log(game.board.rows)
+  renderBoard(game.board)
+  renderCurrentPlayer(game.players)
+}
+
+const renderCurrentPlayer = players => {
+  console.log('our players:', players)
+  document.querySelector('.enter-names').style.display = 'none'
+  const activePlayer = game.getActivePlayer().name
+  console.log('active player:', activePlayer)
+  playerTurn.textContent = `${activePlayer}'S turn!`
+  gameTable.style.display = 'block'
+}
+
+/*let count
+count = 20
+const timeElem = document.getElementById('clock')
+const timerUnit = setInterval(countdown, 1000)
+countdown();
+let count
+count = 20
+const timeElem = document.getElementById('clock')
+const timerUnit = setInterval(countdown, 1000)
+
+function countdown () {
+  if (count === 0) {
+    clearTimeout(timerUnit)
+    clearInterval(timerUnit)
+    timeupMessage()
+  } else if (count === 1) {
+    timeElem.innerHTML = count + ' second remaining'
+    count--
+  } else {
+    timeElem.innerHTML = count + ' seconds remaining'
+    count--
+  }
+}
+
+// Timeup message
+function timeupMessage () {
+  timeElem.innerText = ''
+  document.getElementById('end-statement').innerText = '🤭 You ran out of time. ⌛'
+  clearInterval(timerUnit)
+}*/
+
+//  for (let i = 0; i < tableCell.length; i++) {
+//   tableCell[i].addEventListener('click', e => {
+//     console.log(`${e.target.parentElement.rowIndex}, ${e.target.cellIndex}`)
+//   })
+// }
+
+twoPlayerBtn.addEventListener('click', e => {
+  console.log('ehj')
+  document.querySelector('.enter-names').style.display = 'block'
+  document.querySelector('.select-game').style.display = 'none'
+})
+
+let nrOfMoves1 = 0
+let nrOfMoves2 = 0
+const player1Color = '#EC9EB1'
+const player2Color = '#E8EA8B'
 
   startGameBtn.addEventListener('click', (e) => {
     console.log('start game')
@@ -39,6 +103,66 @@ twoPlayerBtn.addEventListener('click', (e) => {
    renderBoard(game.board)
     renderCurrecntPlayer(game.players)
 }
+function changeColor (e) {
+  const column = e.target.cellIndex
+  const row = []
+  if (!winner) {
+    for (let i = 5; i > -1; i--) {
+      if (tableRow[i].children[column].style.backgroundColor === 'white') {
+        row.push(tableRow[i].children[column])
+        console.log('currentPlayer', currentPlayer)
+
+        if (currentPlayer === 1) {
+          nrOfMoves1++
+          console.log('nrOfMoves1 of player 1', nrOfMoves1)
+          row[0].style.background = player1Color
+          if (
+            horizontalCheck() ||
+            verticalCheck() ||
+            diagonalCheck1() ||
+            diagonalCheck2()
+          ) {
+            playerTurn.textContent = `${player1} Wins`
+            winner = true
+            setTimeout(function () {
+              showWinnerOverlay()
+            }, 3000)
+          } else if (drawCheck()) {
+            playerTurn.textContent = 'Game is a draw'
+            winner = true
+          } else {
+            playerTurn.textContent = `${player2}'s turn`
+            currentPlayer = 2
+            return currentPlayer
+          }
+        } else {
+          nrOfMoves2++
+          console.log('nrOfMoves2 of player 2', nrOfMoves2)
+          row[0].style.backgroundColor = player2Color
+          if (
+            horizontalCheck() ||
+            verticalCheck() ||
+            diagonalCheck1() ||
+            diagonalCheck2()
+          ) {
+            playerTurn.textContent = `${player2} Wins`
+            winner = true
+          } else if (drawCheck()) {
+            playerTurn.textContent = 'Game is a draw'
+            winner = true
+          } else {
+            playerTurn.textContent = `${player1}'s turn`
+            currentPlayer = 1
+            return currentPlayer
+          }
+        }
+      }
+    }
+  }
+
+  function showWinnerOverlay () {
+    winnerOverlay.style.visibility = 'visible'
+  }
 
 const renderCurrecntPlayer=(players)=>{
     const activePlayer=game.getActivePlayer().name
@@ -128,3 +252,28 @@ console.log('board rendered')
     //   }
     //   div.innerHTML = gameBoardStr
 }
+  
+
+// Function for when the players want a rematch
+reset.addEventListener('click', () => {
+  // Change the color of the slots to white
+  tableSlot.forEach(slot => {
+    slot.style.backgroundColor = 'white'
+    // Set the winner to false
+    winner = false
+
+    //document.getElementById('end-statement').innerText = ''
+    //count = 20
+    // Hide the winner overlay
+    winnerOverlay.style.visibility = 'hidden'
+    // Set the current player back to 1 and change the text
+    return currentPlayer === 1
+      ? (playerTurn.textContent = `${player1}'s turn`)
+      : (playerTurn.textContent = `${player2}'s turn`)
+  })
+})
+
+startGameBtn.addEventListener('click', e => {
+  console.log('start game')
+  renderGame()
+})
