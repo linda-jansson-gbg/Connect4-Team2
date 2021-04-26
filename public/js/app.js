@@ -18,16 +18,17 @@ const reset = document.querySelector('#reset')
 
 
   const renderGame = () => {
-
+console.log(game.board.rows);
  //   renderBoard(game.board)
     renderCurrentPlayer(game.players)
 }
 
 const renderCurrentPlayer = (players) => {
-  
+  console.log('our players:', players);
     document.querySelector('.enter-names').style.display = 'none'
-
- //   playerTurn.textContent = `${game.players}'S turn!`
+const activePlayer = players.player.active
+console.log('active player:', activePlayer)
+     playerTurn.textContent = `${activePlayer.name}'S turn!`
     gameTable.style.display = 'block'
 }
 
