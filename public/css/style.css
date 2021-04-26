@@ -196,7 +196,7 @@ background: #DADCE0;
     transform: translate(-50%);
     height: 340px;
     width: 386px;*/
-    width: 937px;
+    width: fit-content;
     background-color: #9CE2DB;
     border: 1px solid black;
     padding: 1rem;
