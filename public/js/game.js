@@ -7,6 +7,7 @@ const twoPlayerBtn = document.querySelector('#twoPlayerBtn')
 // const playerCPUBtn = document.querySelector('#playerCPUBtn')
 const startGameBtn = document.querySelector('#startGameBtn')
 const winnerOverlay = document.querySelector('#winner-overlay')
+const winnerName = document.querySelector('.winner--name')
 let player1 = ''
 let player2 = ''
 let winner = false
@@ -87,9 +88,6 @@ function changeColor(e) {
     for (let i = 5; i > -1; i--) {
       if (tableRow[i].children[column].style.backgroundColor === 'white') {
         row.push(tableRow[i].children[column])
-        console.log('currentPlayer', currentPlayer)
-        
-        
         if (currentPlayer === 1) {
           nrOfMoves1++
           console.log('nrOfMoves1 of player 1', nrOfMoves1)
@@ -97,9 +95,11 @@ function changeColor(e) {
           if (horizontalCheck() || verticalCheck() || diagonalCheck1() || diagonalCheck2()) {
             playerTurn.textContent = `${player1} Wins`
             winner = true
-            setTimeout(function(){ showWinnerOverlay(); }, 3000)
+            setTimeout(function () { showWinnerOverlay(player1, nrOfMoves1); }, 2000)
+            return winner
           } else if (drawCheck()) {
             playerTurn.textContent = 'Game is a draw'
+            winnerName.textContent = `No one won`
             winner = true
           } else {
             playerTurn.textContent = `${player2}'s turn`
@@ -108,13 +108,15 @@ function changeColor(e) {
           }
         } else {
           nrOfMoves2++
-          console.log('nrOfMoves2 of player 2', nrOfMoves2)
           row[0].style.backgroundColor = player2Color
           if (horizontalCheck() || verticalCheck() || diagonalCheck1() || diagonalCheck2()) {
             playerTurn.textContent = `${player2} Wins`
             winner = true
+            setTimeout(function () { showWinnerOverlay(player2, nrOfMoves2); }, 2000)
+            return winner
           } else if (drawCheck()) {
             playerTurn.textContent = 'Game is a draw'
+            winnerName.textContent = `No one won`
             winner = true
           } else {
             playerTurn.textContent = `${player1}'s turn`
@@ -126,8 +128,28 @@ function changeColor(e) {
     }
   }
 
-  function showWinnerOverlay() {
+  function showWinnerOverlay(winningPlayer, nrMoves) { 
     winnerOverlay.style.visibility = "visible"
+    winnerName.textContent = `${winningPlayer} Won!`
+    console.log(winningPlayer + ' vann med ' + nrMoves + ' drag')
+    //saveResult({winningPlayer, nrMoves})
+    //window.localStorage.setItem('winners', JSON.stringify({winningPlayer, nrMoves}))
+  }
+
+  function saveResult(newWinner) {
+    //console.log(window.localStorage.getItem('winners'))
+//    console.log(newWinner)
+    let winners = []
+    if (window.localStorage.getItem('winners')) {
+      try {
+        winners = localStorage.getItem('winners');
+      } catch(e) {
+        window.localStorage.removeItem('winners');
+      }
+    }
+
+    winners.push(newWinner)
+    window.localStorage.setItem('winners', JSON.stringify(winners))
   }
 
   function colorMatchCheck (one, two, three, four) {
@@ -215,6 +237,8 @@ reset.addEventListener('click', () => {
       //count = 20
     // Hide the winner overlay
     winnerOverlay.style.visibility = 'hidden'
+    nrOfMoves1 = 0
+    nrOfMoves2 = 0
     // Set the current player back to 1 and change the text
     return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` :
        playerTurn.textContent = `${player2}'s turn`)
