@@ -1,3 +1,4 @@
+
 // Selectors
 const gameTable = document.querySelector('.game')
 const tableRow = document.getElementsByTagName('tr')
@@ -13,7 +14,6 @@ let player2 = ''
 let winner = false
 const playerTurn = document.querySelector('.player-turn')
 const reset = document.querySelector('#reset')
-
 
 /*let count
 count = 20
@@ -128,29 +128,32 @@ function changeColor(e) {
     }
   }
 
-  function showWinnerOverlay(winningPlayer, nrMoves) { 
-    winnerOverlay.style.visibility = "visible"
-    winnerName.textContent = `${winningPlayer} Won!`
-    console.log(winningPlayer + ' vann med ' + nrMoves + ' drag')
-    //saveResult({winningPlayer, nrMoves})
-    //window.localStorage.setItem('winners', JSON.stringify({winningPlayer, nrMoves}))
-  }
+ 
 
-  function saveResult(newWinner) {
-    //console.log(window.localStorage.getItem('winners'))
-//    console.log(newWinner)
-    let winners = []
-    if (window.localStorage.getItem('winners')) {
-      try {
-        winners = localStorage.getItem('winners');
-      } catch(e) {
-        window.localStorage.removeItem('winners');
-      }
+function showWinnerOverlay(winningPlayer, nrMoves) { 
+  winnerOverlay.style.visibility = "visible"
+  winnerName.textContent = `${winningPlayer} Won!`
+  console.log(winningPlayer + ' vann med ' + nrMoves + ' drag')
+  saveResult({winningPlayer, nrMoves})
+}
+
+function saveResult(newWinner) {
+  let winners = []
+  if (window.localStorage.getItem('winners')) {
+    try {
+      winners = JSON.parse(localStorage.getItem('winners'))
+      
+    } catch (e) {
+      window.localStorage.removeItem('winners')
     }
-
-    winners.push(newWinner)
-    window.localStorage.setItem('winners', JSON.stringify(winners))
+  } else {
+      window.localStorage.setItem('winners', JSON.stringify(newWinner))
   }
+  winners.push(newWinner)
+  window.localStorage.setItem('winners', JSON.stringify(winners))
+  console.log('winners', winners)
+  console.log('newWinner', newWinner)
+}
 
   function colorMatchCheck (one, two, three, four) {
     return (one === two && one === three && one === four && one !== 'white')
