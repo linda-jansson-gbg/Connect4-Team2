@@ -118,9 +118,9 @@ footer {
   body {
     background-color: white;
   }
-  main {
-    /*background-image: none;*/
-  }
+ /* main {
+    background-image: none;
+  }*/
 }
 @media only screen and (max-width: 375px) {
   .highscore {

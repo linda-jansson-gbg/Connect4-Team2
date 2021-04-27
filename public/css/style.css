@@ -37,10 +37,15 @@ header {
 
 /* Navigation Overlay */
 .hamburger {
+  width: 100%;
   display: none;
+  line-height: 100%;
+  font-size: 2.5rem;
+ justify-self: left;
 }
 
 .overlay {
+  display:none;
   position: absolute;
   height: 100vh;
   background-color: #c8e0c0;
@@ -505,8 +510,12 @@ header {
     display: none;
   }
 
-  .overlay {
+  .show {
     display:block;
+  }
+
+
+  .overlay {
     height: 100vh;
     background-color: #c8e0c0;
     transition: 0.5s;
