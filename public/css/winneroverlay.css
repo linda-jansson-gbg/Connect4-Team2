@@ -37,8 +37,11 @@ h2 {
 h1.winner--heading,
 h2 {
   color: #20a899;
+  text-shadow: 2px 2px 0px #9ce2db;
 }
-
+.player-turn, .winner--name {
+  text-transform: capitalize;
+}
 .btn {
   font-size: 1.5em;
   padding: 0.5rem;
