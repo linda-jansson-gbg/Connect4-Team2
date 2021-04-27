@@ -14,44 +14,6 @@ let winner = false
 const playerTurn = document.querySelector('.player-turn')
 const reset = document.querySelector('#reset')
 
-/*let count
-count = 20
-const timeElem = document.getElementById('clock')
-const timerUnit = setInterval(countdown, 1000)
-countdown();
-let count
-count = 20
-const timeElem = document.getElementById('clock')
-const timerUnit = setInterval(countdown, 1000)
-
-function countdown () {
-  if (count === 0) {
-    clearTimeout(timerUnit)
-    clearInterval(timerUnit)
-    timeupMessage()
-  } else if (count === 1) {
-    timeElem.innerHTML = count + ' second remaining'
-    count--
-  } else {
-    timeElem.innerHTML = count + ' seconds remaining'
-    count--
-  }
-}
-
-// Timeup message
-function timeupMessage () {
-  timeElem.innerText = ''
-  document.getElementById('end-statement').innerText = '🤭 You ran out of time. ⌛'
-  clearInterval(timerUnit)
-}*/
-
-// Create eventlisteners for every cell in the table - BO
-/*for (let i = 0; i < tableCell.length; i++) {
-  tableCell[i].addEventListener('click', (e) => {
-    console.log(`${e.target.parentElement.rowIndex}, ${e.target.cellIndex}`)
-  })
-}*/
-
 // Add eventlistener for the 2 player btn - US
 twoPlayerBtn.addEventListener('click', (e) => {
   document.querySelector('.enter-names').style.display = 'block'
