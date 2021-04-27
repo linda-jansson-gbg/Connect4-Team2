@@ -7,11 +7,11 @@
     <title>Home page</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body onload="onload()">
+  <body>
     <div class="home-wrapper">
       <!----->
       <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
           >&times;</a
         >
         <div class="overlay-content">
@@ -22,13 +22,14 @@
         </div>
       </div>
       <!----->
-      <span
+      
+      <div class="navcontainer">
+        <span
             class="hamburger"
-            style="font-size:30px;cursor:pointer"
-            onclick="openNav()"
+            style="cursor:pointer"
+            onclick="toggleNav()"
             >&#9776;</span
           >
-      <div class="navcontainer">
         <nav class="navbar">
           <a class="deafult" href="#">Home</a>
           
@@ -114,18 +115,15 @@
 
     <!----->
     <script>
-      function openNav () {
-        document.getElementById('myNav').style.display = 'block'
+      function toggleNav() {
+        document.getElementById('myNav').classList.toggle('show')
       }
 
-      function closeNav () {
-        document.getElementById('myNav').style.width = '0%'
-      }
 
-      function onload () {
-        var x = document.getElementById('myNav')
-        x.style.display = 'none'
-      }
+      // function onload () {
+      //   var x = document.getElementById('myNav')
+      //   x.style.display = 'none'
+      // }
     </script>
     <!----->
 
