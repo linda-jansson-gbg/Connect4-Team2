@@ -42,7 +42,7 @@ function createListOfWinners() {
     maxLength = winners.length
   }
 
-  // Create the list of top 10 players (if )
+  // Create the list of top 10 players
   for (let i = 0; i < maxLength; i++) {
     highscoreList += `<li><span class="leader" style="background-color: ${colors[i]}">P${i+1}</span><p class="name">${winners[i].winningPlayer}</p><span class="moves">${winners[i].nrMoves}</span></li>`
   }
