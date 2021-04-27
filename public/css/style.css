@@ -108,8 +108,6 @@ header {
   width: 300px;
 }
 
-
-
 .down-arrow {
   width: 100px;
   transform: translateY(-50%);
@@ -263,7 +261,7 @@ header {
 }
 
 /* Game page CSS */
-
+.main__h1_game {
   font-size: 72px;
   font-family: 'Montserrat', sans-serif;
   color: #42c3b5;
@@ -300,8 +298,6 @@ header {
   justify-content: space-evenly;
   width: 100vw;
   margin-top: 10%;
-
-
 }
 
 .twoPlayerBtn:hover {
@@ -387,8 +383,6 @@ header {
   .deafult {
     margin-right: 60%;
   }
-
-
 }
 
 @media all and (max-width: 900px) {
@@ -416,62 +410,57 @@ header {
 @media all and (max-width: 700px) {
   /* Game page CSS */
 
-.main__h1_game {
-  font-size: 52px;
-  margin-top: 60px;
-  padding: 50px;
-}
+  .main__h1_game {
+    font-size: 52px;
+    margin-top: 60px;
+    padding: 50px;
+  }
 
-.twoPlayerBtn {
-  width: 155px;
-  height: 155px;
-  font-size: 16px;
-  padding: 0;
-}
+  .twoPlayerBtn {
+    width: 155px;
+    height: 155px;
+    font-size: 16px;
+    padding: 0;
+  }
 
+  #playerCPUBtn {
+    width: 155px;
+    height: 155px;
+    font-size: 16px;
+    padding: 0;
+  }
+  .select__player_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin-top: 10%;
+  }
 
-#playerCPUBtn {
- width: 155px;
-height: 155px;
-font-size: 16px;
-padding: 0;
+  .twoPlayerBtn:hover {
+    transform: scale(1.1);
+  }
 
- 
-}
-.select__player_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100vw;
-  margin-top: 10%;
-  
-}
+  .playerCPUBtn:hover {
+    transform: scale(1.1);
+  }
+  .artwork-twopeople {
+    margin-left: 400px;
+    width: 120px;
+    margin-bottom: -200px;
+    transform: translateY(-120%);
+    padding-bottom: 0;
+    /* z-index: 99; */
+  }
 
-.twoPlayerBtn:hover {
-  transform: scale(1.1);
-}
+  .artwork-robot-gamepage {
+    margin-right: 70%;
+    width: 150px;
+    transform: rotate(-10deg);
+    margin-bottom: 0;
+  }
 
-.playerCPUBtn:hover {
-  transform: scale(1.1);
-}
-.artwork-twopeople {
-  margin-left: 400px;
-  width: 120px;
-  margin-bottom: -200px;
-  transform: translateY(-120%);
-  padding-bottom: 0;
-  /* z-index: 99; */
-}
-
-.artwork-robot-gamepage {
-  margin-right: 70%;
-  width: 150px;
-  transform: rotate(-10deg);
-  margin-bottom: 0;
-}
-
-
-/* Game page ends here */
+  /* Game page ends here */
 
   .deafult {
     margin-right: 40%;
@@ -505,23 +494,24 @@ padding: 0;
 }
 
 @media all and (max-width: 500px) {
-
   /* Navigation Overlay  */
   .hamburger {
     display: block;
+    padding-top: 5px;
+    position: absolute;
+  }
+
+  .navbar {
+    display: none;
   }
 
   .overlay {
-    display: block;
-    position: absolute;
+    display:block;
     height: 100vh;
     background-color: #c8e0c0;
-    z-index: 99;
-    overflow-x: hidden;
     transition: 0.5s;
   }
-    /* Navigation Overlay Ends */
-
+  /* Navigation Overlay Ends */
 
   .about__h1 {
     font-size: 26px;
