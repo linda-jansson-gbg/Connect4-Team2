@@ -107,14 +107,8 @@ header {
   z-index: -2;
   width: 300px;
 }
-.artwork-twopeople {
-  margin-left: 700px;
-  width: 300px;
-  margin-bottom: 0;
-  transform: translateY(-90%);
-  padding-bottom: 0;
-  z-index: 99;
-}
+
+
 
 .down-arrow {
   width: 100px;
@@ -270,10 +264,12 @@ header {
 
 /* Game page CSS */
 
-.player__h1 {
   font-size: 72px;
   font-family: 'Montserrat', sans-serif;
   color: #42c3b5;
+  margin-top: 60px;
+  padding: 50px;
+  text-align: center;
 }
 
 .twoPlayerBtn {
@@ -298,11 +294,14 @@ header {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .select__player_container {
+  grid-area: header;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100vw;
-  margin-top: 35%;
+  margin-top: 10%;
+
+
 }
 
 .twoPlayerBtn:hover {
@@ -388,6 +387,8 @@ header {
   .deafult {
     margin-right: 60%;
   }
+
+
 }
 
 @media all and (max-width: 900px) {
@@ -413,6 +414,65 @@ header {
 }
 
 @media all and (max-width: 700px) {
+  /* Game page CSS */
+
+.main__h1_game {
+  font-size: 52px;
+  margin-top: 60px;
+  padding: 50px;
+}
+
+.twoPlayerBtn {
+  width: 155px;
+  height: 155px;
+  font-size: 16px;
+  padding: 0;
+}
+
+
+#playerCPUBtn {
+ width: 155px;
+height: 155px;
+font-size: 16px;
+padding: 0;
+
+ 
+}
+.select__player_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin-top: 10%;
+  
+}
+
+.twoPlayerBtn:hover {
+  transform: scale(1.1);
+}
+
+.playerCPUBtn:hover {
+  transform: scale(1.1);
+}
+.artwork-twopeople {
+  margin-left: 400px;
+  width: 120px;
+  margin-bottom: -200px;
+  transform: translateY(-120%);
+  padding-bottom: 0;
+  /* z-index: 99; */
+}
+
+.artwork-robot-gamepage {
+  margin-right: 70%;
+  width: 150px;
+  transform: rotate(-10deg);
+  margin-bottom: 0;
+}
+
+
+/* Game page ends here */
+
   .deafult {
     margin-right: 40%;
   }
@@ -436,12 +496,16 @@ header {
 }
 
 @media all and (max-width: 600px) {
+  .main__h1_game {
+    font-size: 40px;
+  }
   .deafult {
     margin-right: 25%;
   }
 }
 
 @media all and (max-width: 500px) {
+
   /* Navigation Overlay  */
   .hamburger {
     display: block;
@@ -457,6 +521,7 @@ header {
     transition: 0.5s;
   }
     /* Navigation Overlay Ends */
+
 
   .about__h1 {
     font-size: 26px;
