@@ -143,3 +143,36 @@ padding-top: 5px;
         background-color: lightblue;
     }
 }
+
+/*tf added*/
+
+.board > div {
+    /* think about
+       can we use vw or vh as units
+       to scale the board to the screen? */
+    width: 70px;
+    height: 70px;
+    background-color: blue;
+    padding: 5px;
+    float: left;
+    cursor: pointer;
+}
+
+.board div:nth-child(7n + 1){
+    clear:both;
+}
+
+.board div div {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #9CE2DB;
+}
+
+.board .player-1 div {
+    background-color: red;
+}
+
+.board .player-2 div {
+    background-color: yellow;
+}

@@ -1,10 +1,13 @@
+import Board from './Board.js';
+
 export default class GamePage {
 
   constructor(app) {
     this.app = app;
     this.playerNames = [];
+    this.board = new Board(this);
 
-    app.eventHandler.registerEvent(
+    this.app.eventHandler.registerEvent(
       'submit',
       '.enter-names-form',
       e => this.namesFormSubmit(e)
@@ -19,7 +22,6 @@ export default class GamePage {
     this.playerNames.push(
       document.querySelector('input[name="player2name"]').value
     );
-    alert('Welcome ' + this.playerNames.join(', ') + '!');
     // always re-render any change 
     // by calling this.app.render()
     this.app.render();
@@ -36,7 +38,9 @@ export default class GamePage {
             <div><input name="player2name" type="text" placeholder="Player 2"></div>
             <div><input type="submit" value="Start"></div>
           </form>
-        ` : `Now render the board...`}
+        ` : /*html*/`
+          ${this.board.render()}
+        `}
       </main>
     `
   }
