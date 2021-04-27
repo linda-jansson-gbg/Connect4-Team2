@@ -32,7 +32,6 @@ h1.winner--heading {
 h2 {
   font-size: 1.8em;
   padding-bottom: 4rem;
-  text-transform: capitalize;
 }
 h1.winner--heading,
 h2 {
@@ -53,9 +52,7 @@ h2 {
   margin-bottom: 3rem;
   outline: none;
 }
-.player-turn {
-  text-transform: capitalize;
-}
+
 .btn--pink {
   background-color: #ec9eb1;
 }
