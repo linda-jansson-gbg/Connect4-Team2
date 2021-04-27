@@ -7,28 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/winneroverlay.css">
+
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <header>
-            <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="#">Rules</a>
-                <a href="highscore.html">Score</a>
-                <a href="game.html">Game</a>
-            </nav>
-        </header>
+<div class="home-wrapper">
+      <div class="navcontainer">
+        <nav class="navbar">
 
-        <main>
-            <section class="select-game">
-                <h1 class="select-game-title">Do you want to play against a friend or a computer?</h1>
-                <article class="sub-wrapper">
-                <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
+          <a class="deafult" href="highscore.html">Home</a>
+
+          <a class="deafult" href="index.html">Home</a>
+
+          <a    href="#anchor-rules">Rules</a>
+          <a href="highscore.html">Highscore</a>
+          <a href="game.html">Game</a>
+        </nav>
+      </div>
+ 
+      <header>  
+          <h1 class="main__h1_game">Do you want to play against a friend or a computer?</h1>
+          <section class="select__player_container">
+         <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
                 <button id="playerCPUBtn">Player vs Computer</button>
-                </article>
-            </section>
+                </section>
+
+        <img class="artwork-robot-gamepage" src="assets/Artwork_robot.svg">
+        <img class="artwork-twopeople" src="assets/Artwork_twopeople.svg">
+
+        <footer class="footer">
+        <p class="copyright">@Copyright</p>
+      </footer>
+            </div>
             <section class="enter-names">
                 <h1>Enter Player Names</h1>
                 <label for="player1">Player 1</label>
@@ -98,17 +110,24 @@
                     </table>
 
                 </div>
-                <p class="end-statement" id="end-statement"></p>
-                <span id="clock" class="clock"></span>
+                <!--<p class="end-statement" id="end-statement"></p>
+                <span id="clock" class="clock"></span>-->
+
                 <h3 class="player-turn"></h3>
-                <div class="reset">Rematch</div>
-                <button class="restart" id="restart" onClick="document.location.reload(true)">Start Over</div>
+                <!--<div class="reset">Rematch</div>
+                <button class="restart" id="restart" onClick="document.location.reload(true)">Start Over</div>-->
             </div>
 
         </main>
-      
-
     </div>
+    <section class="overlay" id="winner-overlay">
+        <article class="winner">
+            <h1 class="winner--heading">Congratulations!</h1>
+            <h2 class="winner--name">Anna Won!</h2>
+            <button id="reset" class="btn btn--pink">Rematch</button>
+            <button class="btn btn--yellow" id="restart" onclick="document.location.reload(true)">Start Over</button>
+        </article>
+    </section>
     <script src="js/game.js" type="module"></script>
 
 </body>
