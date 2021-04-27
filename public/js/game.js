@@ -8,7 +8,7 @@ const playerCPUBtn = document.querySelector('#playerCPUBtn')
 const startGameBtn = document.querySelector('#startGameBtn')
 const winnerOverlay = document.querySelector('#winner-overlay')
 const winnerName = document.querySelector('.winner--name')
-
+document.querySelector('.enter-names-cpu').style.display = 'none'
 let player1 = ''
 let player2 = ''
 let winner = false
@@ -25,10 +25,10 @@ twoPlayerBtn.addEventListener('click', (e) => {
 })
 
 // Add eventlistener for the 1 player vs computer btn - US
-playerCPUBtn.addEventListener('click', (e) => {
-  document.querySelector('.enter-names').style.display = 'block'
+  playerCPUBtn.addEventListener('click', (e) => {
+  document.querySelector('.enter-names-cpu').style.display = 'block'
   document.querySelector('.select__player_container').style.display = 'none'
-  document.querySelector('#player2').value = 'computer'
+ 
 })
 
 // Add eventlistener for the start game btn - US
