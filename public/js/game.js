@@ -5,10 +5,11 @@ const tableCell = document.getElementsByTagName('td')
 const tableSlot = document.querySelectorAll('.slot')
 const twoPlayerBtn = document.querySelector('#twoPlayerBtn')
 const playerCPUBtn = document.querySelector('#playerCPUBtn')
+document.querySelector('.enter-names-cpu').style.display = 'none'
 const startGameBtn = document.querySelector('#startGameBtn')
 const winnerOverlay = document.querySelector('#winner-overlay')
 const winnerName = document.querySelector('.winner--name')
-document.querySelector('.enter-names-cpu').style.display = 'none'
+
 let player1 = ''
 let player2 = ''
 let winner = false
