@@ -26,14 +26,6 @@ header {
   width: 100vw;
   align-items: center;
 }
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 2rem;
-}
-.navbar a:first-child {
-  margin-right: auto;
-}
 h1 {
   font-size: 3em;
   color: #20A899;
@@ -47,6 +39,7 @@ main {
   background: url(/assets/Artwork_rocket.svg) 5rem top no-repeat;
   width: inherit;
   margin-top: 2rem;
+  justify-content: center;
 }
 .highscore {
   border: 1px solid black;
@@ -111,8 +104,8 @@ footer {
   flex-direction: row;
   min-height: 6rem;
   margin-top: 2rem;
-  position: fixed;
-  bottom: 0;
+  /*position: fixed;
+  bottom: 0;*/
 }
 @media only screen and (max-width: 900px) {
   body {
