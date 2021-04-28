@@ -37,7 +37,7 @@ startGameBtn.addEventListener('click', e => {
   player2 = document.querySelector('#player2').value
   document.querySelector('.enter-names').style.display = 'none'
   playerTurn.textContent = `${player1}' turn!` // - BO
-  gameTable.style.display = 'block'
+  gameTable.style.display = 'flex'
 })
 
 // Set the number of moves to 0 and cellId to 1 - US

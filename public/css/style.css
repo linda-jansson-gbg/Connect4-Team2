@@ -9,7 +9,6 @@ html {
   max-width: 100vw;
   font-family: 'Montserrat', sans-serif;
   background-color: #9ce2db;
-  box-sizing: border-box;
 }
 
 .home-wrapper {
@@ -41,7 +40,7 @@ header {
   display: none;
   line-height: 100%;
   font-size: 2.5rem;
- justify-self: left;
+  justify-self: left;
 }
 
 .overlay {
@@ -337,12 +336,11 @@ header {
 }
 
 .input__text {
-width: 250px;
-height: 60px;
-border-radius: 10px;
-background-color: solid #FFFFFF;
-border:none
-
+  width: 250px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: solid #FFFFFF;
+  border:none
 }
 
 label {
@@ -357,20 +355,20 @@ label {
   width: 50px;
 }
 
-
-
-/* Game page ends here */
+.game {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 2rem 0;
+}
 
 .game--board {
-  /*position: absolute;
-    top: 8rem;
-    left: 50%;
-    transform: translate(-50%);
-    height: 340px;
-    width: 386px;*/
   background-color: #9ce2db;
-  border: 1px solid black;
-  padding: 1rem;
+  padding: 1rem 4rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
 }
 
 .enter-names {
@@ -378,46 +376,47 @@ label {
   align-items: center;
 }
 
+.player-turn {
+  text-transform: capitalize;
+  color: #20a899;
+  font-size: 1.5em;
+  /*transform: translateY(-15rem);*/
+}
+
 .slot {
   width: 3rem;
   height: 3rem;
   background-color: white;
-  border: 1px solid black;
   border-radius: 50%;
   padding: 0.3rem;
-}
-
-.slot--pink {
-  background: linear-gradient(180deg, #ffffff 6.25%, #f4a5b8 44.27%);
-  border: 6px solid #ec9eb1;
-}
-
-.slot--yellow {
-  background: linear-gradient(180deg, #ffffff 6.25%, #e8ea8b 44.27%);
-  border: 6px solid #e8ea8b;
-}
-
-.reset {
-  /*position: absolute;
-    top: 60vh;
-    left: 50%;
-    transform: translate(-50%);*/
-  border: 1px solid black;
-  width: 5rem;
   text-align: center;
-  cursor: pointer;
+  font-weight: bold;
+}
+
+.winner__artwork {
+  visibility: hidden;
+  align-self: flex-start;
+  z-index: 1000;
+  position: relative;
+  top: -11rem;
+  clear: none;
 }
 
 .restart {
-  /*position: absolute;
-    top: 60vh;
-    left: 50%;
-    transform: translate(-50%);*/
   border: 1px solid black;
   width: 5rem;
   text-align: center;
   cursor: pointer;
 }
+
+.reset {
+  border: 1px solid black;
+  width: 5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Game page ends here */
 
 @media all and (max-width: 1500px) {
   .deafult {
@@ -543,6 +542,10 @@ label {
   .deafult {
     margin-right: 25%;
   }
+  .game--board {
+    padding: 1rem 1rem;
+  }
+
 }
 
 @media all and (max-width: 500px) {
@@ -595,6 +598,10 @@ label {
   .main__h1 {
     font-size: 26px;
   }
+  .game--board {
+    padding: 1rem 0rem;
+  }
+
 }
 
 @media all and (max-width: 400px) {
@@ -625,11 +632,18 @@ label {
   .main__h1 {
     font-size: 26px;
   }
-
   .game__button {
     margin-top: 50px;
     background-color: white;
   }
+  .game--board {
+    padding: 1rem 0rem;
+  }
+  .slot {
+    width: 2rem;
+    height: 2rem;
+  }
+
 }
 
 @media all and (max-width: 300px) {
