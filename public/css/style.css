@@ -324,7 +324,7 @@ header {
   cursor: pointer;
 }
 
-#startGameBtn {
+.startGameBtn {
   width: 307px;
   height: 80px;
   border-radius: 30px;
@@ -339,18 +339,18 @@ header {
   width: 176px;
 height: 179px;
 }
-#startGameBtn a {
+.startGameBtn a  {
   font-size: 24px;
   font-family: 'Montserrat', sans-serif;
   color: black;
   text-decoration: none;
 }
 
-#startGameBtn {
+.startGameBtn {
   transform: scale(1.1);
 }
 
-#startGameBtn {
+.startGameBtn {
   width: 307px;
   height: 80px;
   border-radius: 30px;
@@ -370,8 +370,9 @@ height: 179px;
   width: 250px;
   height: 60px;
   border-radius: 10px;
-  background-color: solid #FFFFFF;
-  border:none
+  background-color: #FFFFFF;
+  border:none;
+  outline: none;
 }
 
 label {
