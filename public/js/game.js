@@ -8,6 +8,7 @@ const playerCPUBtn = document.querySelector('#playerCPUBtn')
 const startGameBtn = document.querySelector('#startGameBtn')
 const startGameCPUBtn = document.querySelector('#startGameCPUBtn')
 const winnerOverlay = document.querySelector('#winner-overlay')
+const winnerHeading = document.querySelector('.winner--heading')
 const winnerName = document.querySelector('.winner--name')
 
 let player1 = ''
@@ -31,20 +32,20 @@ playerCPUBtn.addEventListener('click', e => {
   document.querySelector('.enter-names-cpu').style.display = 'block'
   document.querySelector('.main__h1_game').style.display = 'none'
   document.querySelector('.select__player_container_game').style.display = 'none'
- 
- 
 })
 
 // Add eventlistener for the start game btn - US
 startGameBtn.addEventListener('click', e => {
+  player1 = document.querySelector('#player1').value
+  player2 = document.querySelector('#player2').value
   displayGame()
 })
 startGameCPUBtn.addEventListener('click', e => {
+  player1 = document.querySelector('#player1-cpu').value
+  player2 = 'computer'
   displayGame()
 })
 function displayGame() {
-  player1 = document.querySelector('#player1').value
-  player2 = document.querySelector('#player2').value
   document.querySelector('.enter-names').style.display = 'none'
   document.querySelector('.enter-names-cpu').style.display = 'none'
   playerTurn.textContent = `${player1}' turn!` // - BO
@@ -110,8 +111,11 @@ function changeColor (e) {
           } else if (drawCheck()) {
             // - BO
             playerTurn.textContent = 'Game is a draw'
-            winnerName.textContent = `No one won`
             winner = true
+            setTimeout(function () {
+              showWinnerOverlay('No one', 0)
+            }, 2000)
+            return winner
           } else {
             playerTurn.textContent = `${player2}'s turn` // - BO
             currentPlayer = 2
@@ -141,8 +145,10 @@ function changeColor (e) {
             return winner
           } else if (drawCheck()) {
             playerTurn.textContent = 'Game is a draw'
-            winnerName.textContent = `No one won`
             winner = true
+            setTimeout(function () {
+              showWinnerOverlay('No one', 0)
+            }, 2000)
           } else {
             playerTurn.textContent = `${player1}'s turn`
             currentPlayer = 1
@@ -163,8 +169,11 @@ function changeColor (e) {
   function showWinnerOverlay (winningPlayer, nrMoves) {
     winnerOverlay.style.visibility = 'visible'
     winnerName.textContent = `${winningPlayer} Won!`
+    if (nrMoves === 0) {
+      winnerHeading.textContent = 'It´s a draw'
+    }
     //Only save the result if the winning player is not computer
-    if (winningPlayer !== 'computer') {
+    if (winningPlayer !== 'computer' && nrMoves !== 0) {
       saveResult({ winningPlayer, nrMoves })
     }
   }
