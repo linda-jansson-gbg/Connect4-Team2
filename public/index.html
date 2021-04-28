@@ -9,19 +9,20 @@
   </head>
   <body>
     <div class="home-wrapper">
-      <!----->
+      <!-- hamburger menu overlay start -->
       <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
           >&times;</a
         >
         <div class="overlay-content">
-          <a class="deafult" href="#">Home</a>
+          <a class="deafult" href="#" onclick="toggleNav()">Home</a>
           <a href="#anchor-rules">Rules</a>
           <a href="highscore.html">Highscore</a>
           <a href="game.html">Game</a>
         </div>
       </div>
-      <!----->
+      <!-- hamburger menu overlay end -->
+      <!--       navbar               -->
       
       <div class="navcontainer">
         <span
@@ -38,6 +39,7 @@
           <a href="game.html">Game</a>
         </nav>
       </div>
+      <!--         end of  navbar      -->
 
       <header>
         <img
@@ -118,12 +120,7 @@
       function toggleNav() {
         document.getElementById('myNav').classList.toggle('show')
       }
-
-
-      // function onload () {
-      //   var x = document.getElementById('myNav')
-      //   x.style.display = 'none'
-      // }
+      
     </script>
     <!----->
 
