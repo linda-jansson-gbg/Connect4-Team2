@@ -21,9 +21,9 @@
           >&times;</a
         >
         <div class="overlay-content">
-          <a class="deafult" href="#" >Home</a>
-          <a href="#anchor-rules">Rules</a>
-          <a href="highscore.html">Highscore</a>
+          <a class="deafult" href="index.html" onclick="toggleNav()">Home</a>
+          <a href="index.html#anchor-rules" onclick="toggleNav()">Rules</a>
+          <a href="highscore.html" onclick="toggleNav()">Highscore</a>
           <a href="game.html" onclick="toggleNav()">Game</a>
         </div>
       </div>
@@ -58,22 +58,47 @@
           </section>
             <section class="enter-names">
                 <h1 class="main__h1_game">Enter Player Names</h1>
-                <img class="pink-coin" src="assets/Pink_coin.svg">
-                <label for="player1">Player 1</label>
-                <input class="input__text" type="text" id="player1">
-                <img class="yellow-coin" src="assets/Yellow_coin.svg">
-                <label for="player2">Player 2</label>
-                <input class="input__text" type="text" id="player2">
+                <div class="inputs-wrapper">
+                    <div class="inputs-label">
+                        <div>
+                            <img class="pink-coin" src="assets/Pink_coin.svg">
+                            <label for="player1">Player 1</label>
+                        </div>
+                        <input class="input__text" type="text" id="player1">
+                    </div>
+                    <div class="inputs-label">
+                        <div>
+                            <img class="yellow-coin" src="assets/Yellow_coin.svg">
+                            <label for="player2">Player 2</label>
+                        </div>
+                        <input class="input__text" type="text" id="player2">
+                    </div>
+                </div>
                 <button class="startGameBtn" id="startGameBtn">Play Now</button>
             </section>
             <section class="enter-names-cpu">
                 <h1 class="main__h1_game">Enter your name</h1>
-                <img class="pink-coin" src="assets/Pink_coin.svg">
-                <label for="player1">Player 1</label>
-                <input class="input__text" id="player1-cpu" type="text">
-                <label for="Computer">Computer</label>
-                <img class="yellow-coin" src="assets/Yellow_coin.svg">
-                <img class="robot-input" src="assets/Artwork_robot.svg" alt="">
+                <div class="inputs-wrapper">
+                    <div class="inputs-label">
+                        <div>
+                            <img class="pink-coin" src="assets/Pink_coin.svg">
+                            <label for="player1">Player 1</label>
+                        </div>
+                        <input class="input__text" id="player1-cpu" type="text">
+                    </div>
+                    <div class="inputs-label-cpu">
+                        <div>
+                            <img class="yellow-coin" src="assets/Yellow_coin.svg">
+                            <label for="Computer">Computer</label>                            
+                        </div>
+                        <img class="robot-input" src="assets/Artwork_robot.svg" alt="">
+
+                    </div>
+                </div>
+                
+                
+                
+                
                 <button class="startGameBtn" id="startGameCPUBtn">Play Now</button>
             </section>
             <!--<img class="artwork-robot-gamepage" src="assets/Artwork_robot.svg">

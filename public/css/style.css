@@ -38,7 +38,11 @@ header {
   /*padding: 18px;
   width: 100vw;*/
 }
-
+.start-page {
+  background: url(/assets/Artwork_decorative-coins.svg) -215px -122px no-repeat,
+    url(/assets/Artwork_robot.svg) 0% 100% no-repeat,
+    url(/assets/Artwork_person.svg) right 76% no-repeat;
+}
 /* Navigation Overlay */
 .hamburger {
   width: 100%;
@@ -162,8 +166,7 @@ header {
   font-size: 64px;
   font-family: 'Montserrat', sans-serif;
   color: #42c3b5;
-  padding: 80px;
-  margin-top: -500px;
+  padding: 130px 10px 80px;
 }
 
 .play__now {
@@ -189,19 +192,17 @@ header {
 .about {
   grid-area: about;
   background-color: white;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .about__h1 {
   font-size: 50px;
   font-family: 'Montserrat', sans-serif;
   color: #42c3b5;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 70px;
+  margin: 3rem;
 }
-.about__text {
-  margin: 0 20% 10% 20%;
-  margin-right: 20%;
+.about__text, .rules__text {
+  margin: 3rem 3rem;
   font-weight: lighter;
   font-size: 24px;
   line-height: 30px;
@@ -216,16 +217,6 @@ header {
   font-family: 'Montserrat', sans-serif;
   color: #42c3b5;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 70px;
-}
-
-.rules__text {
-  margin-left: 20%;
-  margin-right: 20%;
-  font-weight: lighter;
-  font-size: 24px;
-  line-height: 30px;
 }
 
 .good__luck_text {
@@ -235,21 +226,25 @@ header {
   font-size: 24px;
   line-height: 30px;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
 .game__button {
   grid-area: gamebutton;
+  background-color: white;
 }
 
 .footer {
   grid-area: footer;
   width: 100vw;
   height: 240px;
-  left: -9px;
-  top: 3578px;
+  /*left: -9px;
+  top: 3578px;*/
   background: #dadce0;
-  display: block;
   margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .game__button {
@@ -261,12 +256,12 @@ header {
   width: 100vw;
   margin-top: 50px;
 }
-
+/*
 .copyright {
   text-align: center;
   bottom: 0;
   margin-top: 150px;
-}
+}*/
 
 /* Game page CSS */
 .main__h1_game {
@@ -277,7 +272,33 @@ header {
   text-align: center;
 
 }
-
+.inputs-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 0;
+  max-width: 900px;
+}
+.inputs-label, .inputs-label-cpu {
+  padding: 1rem;
+}
+.inputs-label-cpu {
+    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.inputs-label div, .inputs-label-cpu div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.inputs-label div img, .inputs-label-cpu div img {
+  padding-right: 1rem;
+}
 .twoPlayerBtn, #playerCPUBtn {
   width: 307px;
   height: 170px;
@@ -328,13 +349,17 @@ header {
 }
 
 .startGameBtn {
-  width: 307px;
-  height: 80px;
-  border-radius: 30px;
+  width: 240px;
+  height: 55px;
+  border-radius: 15px;
   background-color: #e8ea8b;
   border: none;
   margin-bottom: 80px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 4px rgb(0 0 0 / 25%);
+/* margin-left: 35%; */
+  margin-top: 4rem;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 
@@ -343,40 +368,20 @@ header {
 height: 179px;
 
 }
-.startGameBtn a  {
-  font-size: 24px;
-  font-family: 'Montserrat', sans-serif;
-  color: black;
-  text-decoration: none;
-}
 
 .startGameBtn {
   transform: scale(1.1);
 }
 
-.startGameBtn {
-  width: 307px;
-  height: 80px;
-  border-radius: 30px;
-  background-color: #e8ea8b;
-  border: none;
-  margin-bottom: 80px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-left: 35%;
-  margin-top: 100px;
-  font-size: 22px;
-}
-.enter-names-cpu {
-  display: none;
-}
-
 .input__text {
-  width: 250px;
-  height: 60px;
+  width: 300px;
+  height: 45px;
   border-radius: 10px;
-  background-color: #FFFFFF;
-  border:none;
+  background-color: #ffffff;
+  border: none;
   outline: none;
+  padding: 0 1rem;
+  font-size: 1.2em;
 }
 
 label {
@@ -407,9 +412,10 @@ label {
   border-radius: 0.5rem;
 }
 
-.enter-names {
+.enter-names, .enter-names-cpu {
   display: none;
   align-items: center;
+  flex-direction: column;
 }
 
 .player-turn {
@@ -453,7 +459,11 @@ label {
 }
 
 /* Game page ends here */
-
+@media all and (min-width: 900px) {
+    .rules__text, .about__text {
+        margin: 3rem 15rem;
+    }
+}
 
 @media all and (max-width: 900px) {
   .artwork-robot {
@@ -572,6 +582,12 @@ label {
     align-items: center;
     height: 77vh;
   }
+  .start-page {
+    background: url(/assets/Artwork_decorative-coins.svg) -32px -46px no-repeat,
+       url(/assets/Artwork_robot.svg) -19% 22% no-repeat,
+       url(/assets/Artwork_person.svg) right 50% no-repeat;
+    background-size: 48%;
+  }
   .navbar {
     display: none;
   }
@@ -579,7 +595,6 @@ label {
   .show {
     display:block;
   }
-
 
   .overlay {
     height: 100vh;
@@ -608,7 +623,7 @@ label {
   }
 
   .main__h1 {
-    font-size: 26px;
+    font-size: 3em;
   }
   .game--board {
     padding: 1rem 0rem;
@@ -617,35 +632,9 @@ label {
 }
 
 @media all and (max-width: 400px) {
-  .about__h1 {
-    font-size: 26px;
-  }
-  .about__text {
-    font-size: 18px;
-  }
-
-  .rules__h1 {
-    margin-top: 20px;
-    font-size: 26px;
-  }
-
-  .rules__text {
-    font-size: 18px;
-  }
-
-  .good__luck_text {
-    font-size: 18px;
-  }
-
-  .main__h1 {
-    font-size: 26px;
-  }
   .game__button {
     margin-top: 50px;
     background-color: white;
-  }
-  .game--board {
-    padding: 1rem 0rem;
   }
   .slot {
     width: 2rem;
@@ -655,31 +644,7 @@ label {
 }
 
 @media all and (max-width: 300px) {
-  .about__h1 {
-    font-size: 26px;
-  }
-  .about__text {
-    font-size: 18px;
-  }
-
-  .rules__h1 {
-    font-size: 26px;
-  }
-
-  .rules__text {
-    font-size: 18px;
-  }
-
-  .good__luck_text {
-    font-size: 18px;
-  }
-
-  .main__h1 {
-    font-size: 26px;
-  }
-
   .game__button {
     margin-top: 40px;
-    background-color: white;
   }
 }
