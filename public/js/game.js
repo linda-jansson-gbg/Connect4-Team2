@@ -6,6 +6,7 @@ const tableSlot = document.querySelectorAll('.slot')
 const twoPlayerBtn = document.querySelector('#twoPlayerBtn')
 const playerCPUBtn = document.querySelector('#playerCPUBtn')
 document.querySelector('.enter-names-cpu').style.display = 'none'
+document.querySelector('.enter-names').style.display = 'none'
 const startGameBtn = document.querySelector('#startGameBtn')
 const winnerOverlay = document.querySelector('#winner-overlay')
 const winnerName = document.querySelector('.winner--name')
@@ -28,9 +29,10 @@ twoPlayerBtn.addEventListener('click', e => {
 // Add eventlistener for the 1 player vs computer btn - US
 
 playerCPUBtn.addEventListener('click', e => {
-  document.querySelector('.enter-names').style.display = 'block'
-
-  document.querySelector('.select__player_container').style.display = 'none'
+  document.querySelector('.enter-names-cpu').style.display = 'block'
+  document.querySelector('.main__h1_game').style.display = 'none'
+  document.querySelector('.select__player_container_game').style.display = 'none'
+ 
  
 })
 
