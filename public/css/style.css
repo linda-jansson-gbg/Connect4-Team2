@@ -362,6 +362,9 @@ height: 179px;
   margin-top: 100px;
   font-size: 22px;
 }
+.enter-names-cpu {
+  display: none;
+}
 
 .input__text {
   width: 250px;
