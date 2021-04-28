@@ -11,13 +11,40 @@
 </head>
 <body>
    <div class="wrapper">
+
+   
+
     <header> 
-        <nav class="navbar">
+           <!-- hamburger menu overlay start -->
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
+          >&times;</a
+        >
+        <div class="overlay-content">
+          <a class="deafult" href="#" >Home</a>
+          <a href="#anchor-rules">Rules</a>
+          <a href="highscore.html">Highscore</a>
+          <a href="game.html" onclick="toggleNav()">Game</a>
+        </div>
+      </div>
+      <!-- hamburger menu overlay end -->
+      <!--       navbar          -->      
+      
+      <div class="navcontainer">
+        <span
+            class="hamburger"
+            style="cursor:pointer"
+            onclick="toggleNav()"
+            >&#9776;</span
+          >
+          <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="index.html#anchor-rules">Rules</a>
             <a href="highscore.html">Highscore</a>
             <a href="game.html">Game</a>
         </nav>
+      </div>
+       <!--   end of  navbar      -->
     </header>
     <main>
         <h1 class="">Leaderboard</h1>
@@ -30,6 +57,15 @@
         <p>© Copyright</p> 
     </footer>
    </div>
+
+    <!----->
+    <script>
+        function toggleNav() {
+          document.getElementById('myNav').classList.toggle('show')
+        }
+        
+      </script>
+      <!----->
    <script src="js/highscore.js"></script>
 </body>
 </html>

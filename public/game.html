@@ -14,32 +14,59 @@
 <body>
 
 <div class="home-wrapper">
-      <div class="navcontainer">
-        <nav class="navbar">
 
-          <a class="deafult" href="highscore.html">Home</a>
-
-          <a class="deafult" href="index.html">Home</a>
-
-          <a    href="#anchor-rules">Rules</a>
+     <!-- hamburger menu overlay start -->
+     <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
+          >&times;</a
+        >
+        <div class="overlay-content">
+          <a class="deafult" href="#" >Home</a>
+          <a href="#anchor-rules">Rules</a>
           <a href="highscore.html">Highscore</a>
-          <a href="game.html">Game</a>
+          <a href="game.html" onclick="toggleNav()">Game</a>
+        </div>
+      </div>
+      <!-- hamburger menu overlay end -->
+      <!--       navbar          -->      
+      
+      <div class="navcontainer">
+        <span
+            class="hamburger"
+            style="cursor:pointer"
+            onclick="toggleNav()"
+            >&#9776;</span
+          >
+        <nav class="navbar">
+            <a class="deafult" href="highscore.html">Home</a>
+
+            <a class="deafult" href="index.html">Home</a>
+            <a href="index.html#anchor-rules">Rules</a>
+            <a href="highscore.html">Highscore</a>
+            <a href="game.html">Game</a>
+
         </nav>
       </div>
+       <!--   end of  navbar      -->  
  
       <header>  
+
+       
+
         <h1 class="main__h1_game">Do you want to play against a friend or a computer?</h1>
-          <section class="select__player_container">
+          <section class="select__player_container_game">
      
             <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
                 <button id="playerCPUBtn">Player vs Computer</button>
                 </section>
                  <section class="enter-names">
-                <h1>Enter Player Names</h1>
+                <h1 class="main__h1_game">Enter Player Names</h1>
+                <img class="pink-coin" src="assets/Pink_coin.svg">
                 <label for="player1">Player 1</label>
-                <input type="text" id="player1">
+                <input class="input__text" type="text" id="player1">
+                <img class="yellow-coin" src="assets/Yellow_coin.svg">
                 <label for="player2">Player 2</label>
-                <input type="text" id="player2">
+                <input class="input__text" type="text" id="player2">
                 <button id="startGameBtn">Play Now</button>
             </section>
             <section class="enter-names-cpu">
@@ -135,6 +162,16 @@
             <button class="btn btn--yellow" id="restart" onclick="document.location.reload(true)">Start Over</button>
         </article>
     </section>
+
+    <!----->
+    <script>
+        function toggleNav() {
+          document.getElementById('myNav').classList.toggle('show')
+        }
+        
+      </script>
+      <!----->
+
     <script src="js/game.js" type="module"></script>
 
 </body>

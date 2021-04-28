@@ -37,10 +37,15 @@ header {
 
 /* Navigation Overlay */
 .hamburger {
+  width: 100%;
   display: none;
+  line-height: 100%;
+  font-size: 2.5rem;
+ justify-self: left;
 }
 
 .overlay {
+  display:none;
   position: absolute;
   height: 100vh;
   background-color: #c8e0c0;
@@ -300,6 +305,16 @@ header {
   margin-top: 10%;
 }
 
+.select__player_container_game {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin-top: 10%;
+}
+
+
 .twoPlayerBtn:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -333,6 +348,42 @@ header {
   transform: scale(1.1);
 }
 
+#startGameBtn {
+  width: 307px;
+  height: 80px;
+  border-radius: 30px;
+  background-color: #e8ea8b;
+  border: none;
+  margin-bottom: 80px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-left: 35%;
+  margin-top: 100px;
+  font-size: 22px;
+}
+
+.input__text {
+width: 250px;
+height: 60px;
+border-radius: 10px;
+background-color: solid #FFFFFF;
+border:none
+
+}
+
+label {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.pink-coin {
+  width: 50px; 
+}
+.yellow-coin {
+  width: 50px;
+}
+
+
+
 /* Game page ends here */
 
 .game--board {
@@ -349,6 +400,7 @@ header {
 
 .enter-names {
   display: none;
+  align-items: center;
 }
 
 .slot {
@@ -530,8 +582,12 @@ header {
     display: none;
   }
 
-  .overlay {
+  .show {
     display:block;
+  }
+
+
+  .overlay {
     height: 100vh;
     background-color: #c8e0c0;
     transition: 0.5s;
