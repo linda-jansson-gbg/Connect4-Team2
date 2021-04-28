@@ -6,6 +6,7 @@ const tableSlot = document.querySelectorAll('.slot')
 const twoPlayerBtn = document.querySelector('#twoPlayerBtn')
 const playerCPUBtn = document.querySelector('#playerCPUBtn')
 const startGameBtn = document.querySelector('#startGameBtn')
+const startGameCPUBtn = document.querySelector('#startGameCPUBtn')
 const winnerOverlay = document.querySelector('#winner-overlay')
 const winnerName = document.querySelector('.winner--name')
 
@@ -25,20 +26,30 @@ twoPlayerBtn.addEventListener('click', e => {
 })
 
 // Add eventlistener for the 1 player vs computer btn - US
+
 playerCPUBtn.addEventListener('click', e => {
-  document.querySelector('.enter-names').style.display = 'block'
-  document.querySelector('.select__player_container').style.display = 'none'
-  document.querySelector('#player2').value = 'computer'
+  document.querySelector('.enter-names-cpu').style.display = 'block'
+  document.querySelector('.main__h1_game').style.display = 'none'
+  document.querySelector('.select__player_container_game').style.display = 'none'
+ 
+ 
 })
 
 // Add eventlistener for the start game btn - US
 startGameBtn.addEventListener('click', e => {
+  displayGame()
+})
+startGameCPUBtn.addEventListener('click', e => {
+  displayGame()
+})
+function displayGame() {
   player1 = document.querySelector('#player1').value
   player2 = document.querySelector('#player2').value
   document.querySelector('.enter-names').style.display = 'none'
+  document.querySelector('.enter-names-cpu').style.display = 'none'
   playerTurn.textContent = `${player1}' turn!` // - BO
   gameTable.style.display = 'flex'
-})
+}
 
 // Set the number of moves to 0 and cellId to 1 - US
 let nrOfMoves1 = 0
