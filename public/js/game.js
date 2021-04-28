@@ -31,6 +31,8 @@ playerCPUBtn.addEventListener('click', e => {
   document.querySelector('.enter-names-cpu').style.display = 'block'
   document.querySelector('.main__h1_game').style.display = 'none'
   document.querySelector('.select__player_container_game').style.display = 'none'
+  document.querySelector('.artwork-robot-gamepage').style.display = 'none'
+  document.querySelector('.artwork-twopeople').style.display = 'none'
  
  
 })
