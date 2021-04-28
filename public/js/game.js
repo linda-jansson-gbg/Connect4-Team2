@@ -19,21 +19,17 @@ const reset = document.querySelector('#reset')
 
 // Add eventlistener for the 2 player btn - US
 twoPlayerBtn.addEventListener('click', e => {
-  document.querySelector('.enter-names').style.display = 'block'
+  document.querySelector('.enter-names').style.display = 'flex'
   document.querySelector('.select__player_container_game').style.display = 'none'
-  document.querySelector('.artwork-robot-gamepage').style.display = 'none'
-  document.querySelector('.artwork-twopeople').style.display = 'none'
   document.querySelector('.main__h1_game').style.display = 'none'
 })
 
 // Add eventlistener for the 1 player vs computer btn - US
 
 playerCPUBtn.addEventListener('click', e => {
-  document.querySelector('.enter-names-cpu').style.display = 'block'
+  document.querySelector('.enter-names-cpu').style.display = 'flex'
   document.querySelector('.main__h1_game').style.display = 'none'
   document.querySelector('.select__player_container_game').style.display = 'none'
-  document.querySelector('.artwork-robot-gamepage').style.display = 'none'
-  document.querySelector('.artwork-twopeople').style.display = 'none'
 })
 
 // Add eventlistener for the start game btn - US

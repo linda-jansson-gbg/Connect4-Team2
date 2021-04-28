@@ -16,9 +16,9 @@
         >
         <div class="overlay-content">
           <a class="deafult" href="#" onclick="toggleNav()">Home</a>
-          <a href="#anchor-rules">Rules</a>
-          <a href="highscore.html">Highscore</a>
-          <a href="game.html">Game</a>
+          <a href="#anchor-rules" onclick="toggleNav()">Rules</a>
+          <a href="highscore.html" onclick="toggleNav()">Highscore</a>
+          <a href="game.html" onclick="toggleNav()">Game</a>
         </div>
       </div>
       <!-- hamburger menu overlay end -->
@@ -41,15 +41,15 @@
       </div>
       <!--         end of  navbar      -->
 
-      <header>
-        <img
+      <header class="start-page">
+        <!--<img
           class="artwork-decorative-coins"
           src="assets/Artwork_decorative-coins.svg"
-        />
-        <img class="artwork-robot" src="assets/Artwork_robot.svg" />
+        />-->
+        <!--<img class="artwork-robot" src="assets/Artwork_robot.svg" />-->
         <h1 class="main__h1">Connect 4</h1>
-        <button class="play__now"><a href="game.html"> Play Now</a></button>
-        <img class="artwork-person" src="assets/Artwork_person.svg" />
+        <button class="play__now startGameBtn"><a href="game.html"> Play Now</a></button>
+        <!--<img class="artwork-person" src="assets/Artwork_person.svg" />-->
         <img class="down-arrow" src="assets/Down-Arrow.gif" />
       </header>
 
@@ -82,9 +82,7 @@
           First, decide who goes first.
           <br />
           <br />
-          <br />
           Only one player at the time will be able to play.
-          <br />
           <br />
           <br />
           On your turn, drop one of your colored markers into the rack by
@@ -92,22 +90,18 @@
           will end up in the first free position in that column).
           <br />
           <br />
-          <br />
           The game ends when there is a 4-in-a-row (horizontal, vertical or
           diagonal) or if there´s a stalemate.
-          <br />
           <br />
           <br />
           The starter of the previous game goes second on the next game.
         </p>
         <br />
-        <br />
-        <br />
         <p class="good__luck_text">Good luck!</p>
       </section>
 
       <section class="game__button">
-        <button class="play__now"><a href="game.html"> Play Now</a></button>
+        <button class="play__now startGameBtn"><a href="game.html"> Play Now</a></button>
       </section>
 
       <footer class="footer">
