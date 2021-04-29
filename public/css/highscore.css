@@ -1,8 +1,10 @@
+body {
+  background-color: white;
+}
 .highscore-header {
   font-size: 3em;
   color: #20A899;
   padding: 2rem 0;
-  text-shadow: 1px 1px 0px #fff;
 }
 .highscore-page {
   display: flex;
@@ -25,13 +27,17 @@
   border-radius: 1rem;
   background-color: #fff;
   margin-bottom: 8rem;
+  min-height: 816px;
 }
 .highscore__heading {
   font-size: 1.4em;
   align-self: flex-end;
   padding-top: 1rem;
 }
-
+.highscore__no-winner {
+  margin-bottom: auto;
+  font-size: 2em;
+}
 .highscore ul {
   width: 100%;
 }
@@ -65,18 +71,19 @@
   margin-left: auto;
   margin-right: 1rem;
 }
-
-@media only screen and (max-width: 900px) {
-  body {
-    background-color: white;
+@media only screen and (max-width: 800px) {
+  .highscore-page {
+    background: url(/assets/Artwork_rocket.svg) -6rem top no-repeat;
   }
- /* main {
-    background-image: none;
-  }*/
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 500px) {
   .highscore {
     width: 19rem;
+  }
+  .highscore-page {
+    background: url(/assets/Artwork_rocket.svg) -5rem -1rem no-repeat;
+    background-size: 45%;
+    margin-top: 0;
   }
 }
 

@@ -11,50 +11,41 @@
 </head>
 
 <body>
-
-<div class="home-wrapper">
-
+    <div class="home-wrapper">
      <!-- hamburger menu overlay start -->
-     <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
-          >&times;</a
-        >
-        <div class="overlay-content">
-          <a class="deafult" href="index.html" onclick="toggleNav()">Home</a>
-          <a href="index.html#anchor-rules" onclick="toggleNav()">Rules</a>
-          <a href="highscore.html" onclick="toggleNav()">Highscore</a>
-          <a href="game.html" onclick="toggleNav()">Game</a>
+        <div id="myNav" class="overlay">
+            <p class="closebtn" onclick="toggleNav()"
+            >&times;</p>
+            <div class="overlay-content">
+            <a class="deafult" href="index.html" onclick="toggleNav()">Home</a>
+            <a href="index.html#anchor-rules" onclick="toggleNav()">Rules</a>
+            <a href="highscore.html" onclick="toggleNav()">Highscore</a>
+            <a href="game.html" onclick="toggleNav()">Game</a>
+            </div>
         </div>
-      </div>
       <!-- hamburger menu overlay end -->
       <!--       navbar          -->      
       
-      <div class="navcontainer">
-        <span
-            class="hamburger"
-            style="cursor:pointer"
-            onclick="toggleNav()"
-            >&#9776;</span
-          >
-        <nav class="navbar">
-            <a class="deafult" href="index.html">Home</a>
-            <a href="index.html#anchor-rules">Rules</a>
-            <a href="highscore.html">Highscore</a>
-            <a href="game.html">Game</a>
-        </nav>
-      </div>
+        <div class="navcontainer">
+            <span
+                class="hamburger"
+                style="cursor:pointer"
+                onclick="toggleNav()"
+                >&#9776;</span>
+            <nav class="navbar">
+                <a class="deafult" href="index.html">Home</a>
+                <a href="index.html#anchor-rules">Rules</a>
+                <a href="highscore.html">Highscore</a>
+                <a href="game.html">Game</a>
+            </nav>
+        </div>
        <!--   end of  navbar      -->  
- 
-      <header>  
-
-       
-
-        <h1 class="main__h1_game">Do you want to play against a friend or a computer?</h1>
-          <section class="select__player_container_game">
-     
-            <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
-            <button id="playerCPUBtn">Player vs Computer</button>
-          </section>
+        <header>  
+            <h1 class="main__h1_game">Do you want to play against a friend or a computer?</h1>
+            <section class="select__player_container_game">
+                <button id="twoPlayerBtn" class="twoPlayerBtn">Player 1 vs Player 2</button>
+                <button id="playerCPUBtn">Player vs Computer</button>
+            </section>
             <section class="enter-names">
                 <h1 class="main__h1_game">Enter Player Names</h1>
                 <div class="inputs-wrapper">
@@ -91,91 +82,73 @@
                             <label for="Computer">Computer</label>                            
                         </div>
                         <img class="robot-input" src="assets/Artwork_robot.svg" alt="">
-
                     </div>
                 </div>
-                
-                
-                
-                
                 <button class="startGameBtn" id="startGameCPUBtn">Play Now</button>
             </section>
-            <!--<img class="artwork-robot-gamepage" src="assets/Artwork_robot.svg">
-             <img class="artwork-twopeople" src="assets/Artwork_twopeople.svg">-->
+        </header>
+    </div>
+    <div class="game">
+    <div class="game--board">
+        <table cellspacing="12">
+            <tr>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+            </tr>
+            <tr>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+            </tr>
+            <tr>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+            </tr>
+            <tr>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+            </tr>
+            <tr>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+            </tr>
+            <tr>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+                <td class="slot"></td>
+            </tr>
+        </table>
 
-        
-            </div>
-           
-
-            <div class="game">
-                <div class="game--board">
-                    <table cellspacing="12">
-                        <tr>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                        </tr>
-                        <tr>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                        </tr>
-                        <tr>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                        </tr>
-                        <tr>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                        </tr>
-                        <tr>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                        </tr>
-                        <tr>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                            <td class="slot"></td>
-                        </tr>
-                    </table>
-
-                </div>
-                <!--<p class="end-statement" id="end-statement"></p>
-                <span id="clock" class="clock"></span>-->
-
-                <h3 class="player-turn"></h3>
-                <!--<div class="reset">Rematch</div>
-                <button class="restart" id="restart" onClick="document.location.reload(true)">Start Over</div>-->
-            </div>
-
-        </main>
+    </div>
+    <h3 class="player-turn"></h3>
     </div>
     <footer class="footer">
         <p class="copyright">@Copyright</p>
@@ -188,17 +161,11 @@
             <button class="btn btn--yellow" id="restart" onclick="document.location.reload(true)">Start Over</button>
         </article>
     </section>
-
-    <!----->
     <script>
         function toggleNav() {
           document.getElementById('myNav').classList.toggle('show')
         }
-      </script>
-      <!----->
-
+    </script>
     <script src="js/game.js" type="module"></script>
-
 </body>
-
 </html>
