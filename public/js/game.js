@@ -52,7 +52,7 @@ startGameCPUBtn.addEventListener('click', e => {
   }
 })
 
-function displayGame() {
+function displayGame () {
   document.querySelector('.enter-names').style.display = 'none'
   document.querySelector('.enter-names-cpu').style.display = 'none'
   playerTurn.textContent = `${player1}' turn!` // - BO
@@ -107,7 +107,7 @@ function changeColor (e) {
             diagonalCheck1() ||
             diagonalCheck2()
           ) {
-            //- BO
+            // - BO
             playerTurn.textContent = `${player1} Wins` // - BO
             winner = true // - US
             // Set a timer and show the winner overlay - US
@@ -166,26 +166,26 @@ function changeColor (e) {
     }
   }
 
-  //Set background color and shadow to the cell - US
+  // Set background color and shadow to the cell - US
   function setStyle (row, bgColor) {
     row[0].style.backgroundColor = bgColor
     row[0].style.boxShadow = '1px 3px 5px #4c928b'
   }
 
-  //Show winner overlay
+  // Show winner overlay
   function showWinnerOverlay (winningPlayer, nrMoves) {
     winnerOverlay.style.visibility = 'visible'
     winnerName.textContent = `${winningPlayer} Won!`
     if (nrMoves === 0) {
       winnerHeading.textContent = 'It´s a draw'
     }
-    //Only save the result if the winning player is not computer
+    // Only save the result if the winning player is not computer
     if (winningPlayer !== 'computer' && nrMoves !== 0) {
       saveResult({ winningPlayer, nrMoves })
     }
   }
 
-  //Get the localstorage and create a new array with the result if there are any - US
+  // Get the localstorage and create a new array with the result if there are any - US
   function saveResult (newWinner) {
     let winners = []
     if (window.localStorage.getItem('winners')) {
