@@ -287,6 +287,9 @@ header {
 .startGameBtn:hover {
   transform: scale(1.1);
 }
+#startGameCPUBtn{
+  margin-top: 0;
+}
 .robot-input {
   width: 176px;
   height: 179px;
