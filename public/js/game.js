@@ -10,7 +10,6 @@ const startGameCPUBtn = document.querySelector('#startGameCPUBtn')
 const winnerOverlay = document.querySelector('#winner-overlay')
 const winnerHeading = document.querySelector('.winner--heading')
 const winnerName = document.querySelector('.winner--name')
-
 let player1 = ''
 let player2 = ''
 let winner = false
@@ -25,14 +24,13 @@ twoPlayerBtn.addEventListener('click', e => {
 })
 
 // Add eventlistener for the 1 player vs computer btn - US
-
 playerCPUBtn.addEventListener('click', e => {
   document.querySelector('.enter-names-cpu').style.display = 'flex'
   document.querySelector('.main__h1_game').style.display = 'none'
   document.querySelector('.select__player_container_game').style.display = 'none'
 })
 
-// Add eventlistener for the start game btn - US
+// Add eventlistener for the start game btn and start game CPU btn - US
 startGameBtn.addEventListener('click', e => {
   if (document.querySelector('#player1').value === '' || document.querySelector('#player2').value === '') {
     alert('You have to enter a name')
@@ -42,6 +40,7 @@ startGameBtn.addEventListener('click', e => {
     displayGame()
   }
 })
+
 startGameCPUBtn.addEventListener('click', e => {
   if (document.querySelector('#player1-cpu').value === '') {
     alert('You have to enter a name')
@@ -86,7 +85,6 @@ function changeColor (e) {
   } else {
     column = e.target.cellIndex
   }
-
   const row = []
   // Don´t do anything if there is a winner - US
   if (!winner) {

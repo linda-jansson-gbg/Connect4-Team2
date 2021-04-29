@@ -11,9 +11,8 @@
     <div class="home-wrapper">
       <!-- hamburger menu overlay start -->
       <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
-          >&times;</a
-        >
+        <p class="closebtn" onclick="toggleNav()"
+          >&times;</p>
         <div class="overlay-content">
           <a class="deafult" href="#" onclick="toggleNav()">Home</a>
           <a href="#anchor-rules" onclick="toggleNav()">Rules</a>
@@ -23,17 +22,14 @@
       </div>
       <!-- hamburger menu overlay end -->
       <!--       navbar               -->
-      
       <div class="navcontainer">
         <span
             class="hamburger"
             style="cursor:pointer"
             onclick="toggleNav()"
-            >&#9776;</span
-          >
+            >&#9776;</span>
         <nav class="navbar">
           <a class="deafult" href="#">Home</a>
-          
           <a href="#anchor-rules">Rules</a>
           <a href="highscore.html">Highscore</a>
           <a href="game.html">Game</a>
@@ -42,17 +38,10 @@
       <!--         end of  navbar      -->
 
       <header class="start-page">
-        <!--<img
-          class="artwork-decorative-coins"
-          src="assets/Artwork_decorative-coins.svg"
-        />-->
-        <!--<img class="artwork-robot" src="assets/Artwork_robot.svg" />-->
         <h1 class="main__h1">Connect 4</h1>
-        <button class="play__now startGameBtn"><a href="game.html"> Play Now</a></button>
-        <!--<img class="artwork-person" src="assets/Artwork_person.svg" />-->
+        <button class="startGameBtn"><a href="game.html"> Play Now</a></button>
         <img class="down-arrow" src="assets/Down-Arrow.gif" />
       </header>
-
       <section class="about">
         <h1 class="about__h1">About</h1>
         <p class="about__text">
@@ -60,22 +49,18 @@
           that was invented in the 1970’s.
           <br />
           <br />
-
           It got wildly popular all throughout the 1980’s AND to date. In the
           game, the players take turns inserting colored markers/discs into a
           rack.
           <br />
           <br />
-
           Psst. Did you know it is said that the first person to play can always
           win if they know the right moves. Just sayin´ ;)
           <br />
           <br />
-
           Or maybe read some more about the rules?
         </p>
       </section>
-
       <section class="rules">
         <a id="anchor-rules"> <h1 class="rules__h1">Rules</h1></a>
         <p class="rules__text">
@@ -99,25 +84,17 @@
         <br />
         <p class="good__luck_text">Good luck!</p>
       </section>
-
       <section class="game__button">
-        <button class="play__now startGameBtn"><a href="game.html"> Play Now</a></button>
+        <button class="startGameBtn"><a href="game.html"> Play Now</a></button>
       </section>
-
       <footer class="footer">
         <p class="copyright">@Copyright</p>
       </footer>
     </div>
-
-    <!----->
     <script>
       function toggleNav() {
         document.getElementById('myNav').classList.toggle('show')
       }
-      
     </script>
-    <!----->
-
-    <script src="js/main.js" type="module"></script>
   </body>
 </html>
