@@ -33,7 +33,16 @@ playerCPUBtn.addEventListener('click', e => {
 // Add eventlistener for the start game btn and start game CPU btn - US
 startGameBtn.addEventListener('click', e => {
   if (document.querySelector('#player1').value === '' || document.querySelector('#player2').value === '') {
-    alert('You have to enter a name')
+  
+      document.getElementById("alertEnterNames").innerHTML= 'Please enter a name!'
+      document.getElementById("alertEnterNames").style.color="#333941"
+
+      setTimeout(function () {
+        document.getElementById("alertEnterNames").innerHTML= 'Enter Player Names'
+       document.getElementById("alertEnterNames").style.color=""
+        
+      }, 1000)
+ 
   } else {
     player1 = document.querySelector('#player1').value
     player2 = document.querySelector('#player2').value
@@ -42,8 +51,14 @@ startGameBtn.addEventListener('click', e => {
 })
 
 startGameCPUBtn.addEventListener('click', e => {
+  
   if (document.querySelector('#player1-cpu').value === '') {
-    alert('You have to enter a name')
+    document.getElementById("alertEnterName").innerHTML= 'Please enter a name!'
+    document.getElementById("alertEnterName").style.color="#333941"
+    setTimeout(function () {
+      document.getElementById("alertEnterName").innerHTML= 'Enter your name'
+      document.getElementById("alertEnterName").style.color=""
+    }, 1000)
   } else {
     player1 = document.querySelector('#player1-cpu').value
     player2 = 'computer'
@@ -327,3 +342,4 @@ reset.addEventListener('click', () => {
       : (playerTurn.textContent = `${player2}'s turn`)
   })
 })
+
