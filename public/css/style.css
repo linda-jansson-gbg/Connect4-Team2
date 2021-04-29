@@ -368,6 +368,7 @@ label {
   text-align: center;
   cursor: pointer;
 }
+
 /* Game page ends here */
 @media all and (min-width: 900px) {
   .rules__text,
