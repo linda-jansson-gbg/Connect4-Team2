@@ -92,7 +92,11 @@ startGameCPUBtn.addEventListener('click', e => {
 function displayGame () {
   document.querySelector('.enter-names').style.display = 'none'
   document.querySelector('.enter-names-cpu').style.display = 'none'
-  playerTurn.textContent = `${player1}' turn!` // - BO
+  if (player1.charAt(player1.length - 1) === 's') {
+    playerTurn.textContent = `${player1}' turn`
+  } else {
+    playerTurn.textContent = `${player1}'s turn`
+  }
   gameTable.style.display = 'flex'
 }
 
@@ -115,7 +119,8 @@ Array.prototype.forEach.call(tableCell, cell => {
   cell.id = cellId++ // Add an ID to the cell - US
 })
 
-function changeColor (e) {
+function changeColor(e) {
+  
   let column = 0
   // If it´s a click event set column to the cellIndex, otherwise it´s a random number - US
   if (e.target === undefined) {
@@ -160,7 +165,11 @@ function changeColor (e) {
             }, 2000)
             return winner
           } else {
-            playerTurn.textContent = `${player2}'s turn` // - BO
+            if (player2.charAt(player2.length - 1) === 's') {
+              playerTurn.textContent = `${player2}' turn`
+            } else {
+              playerTurn.textContent = `${player2}'s turn` // - BO
+            }
             currentPlayer = 2
             // If player 2 is the computer call this function again with a delay and a random number between 0-6 - US
             if (player2 === 'computer') {
@@ -193,7 +202,11 @@ function changeColor (e) {
               showWinnerOverlay('No one', 0)
             }, 2000)
           } else {
-            playerTurn.textContent = `${player1}'s turn`
+            if (player1.charAt(player1.length - 1) === 's') {
+              playerTurn.textContent = `${player1}' turn`
+            } else {
+              playerTurn.textContent = `${player1}'s turn` // - BO
+            }
             currentPlayer = 1
             return currentPlayer
           }
@@ -216,7 +229,7 @@ function changeColor (e) {
       winnerHeading.textContent = 'It´s a draw'
     }
     // Only save the result if the winning player is not computer
-    if (winningPlayer !== 'computer' && nrMoves !== 0) {
+    if (player2 !== 'computer' && nrMoves !== 0) {
       saveResult({ winningPlayer, nrMoves })
     }
   }
