@@ -8,8 +8,8 @@ const playerCPUBtn = document.querySelector('#playerCPUBtn')
 const startGameBtn = document.querySelector('#startGameBtn')
 const startGameCPUBtn = document.querySelector('#startGameCPUBtn')
 const winnerOverlay = document.querySelector('#winner-overlay')
+const winnerHeading = document.querySelector('.winner--heading')
 const winnerName = document.querySelector('.winner--name')
-
 let player1 = ''
 let player2 = ''
 let winner = false
@@ -18,36 +18,85 @@ const reset = document.querySelector('#reset')
 
 // Add eventlistener for the 2 player btn - US
 twoPlayerBtn.addEventListener('click', e => {
-  document.querySelector('.enter-names').style.display = 'block'
+  document.querySelector('.enter-names').style.display = 'flex'
   document.querySelector('.select__player_container_game').style.display = 'none'
-  document.querySelector('.artwork-robot-gamepage').style.display = 'none'
-  document.querySelector('.artwork-twopeople').style.display = 'none'
   document.querySelector('.main__h1_game').style.display = 'none'
 })
 
 // Add eventlistener for the 1 player vs computer btn - US
-
 playerCPUBtn.addEventListener('click', e => {
-  document.querySelector('.enter-names-cpu').style.display = 'block'
+  document.querySelector('.enter-names-cpu').style.display = 'flex'
   document.querySelector('.main__h1_game').style.display = 'none'
   document.querySelector('.select__player_container_game').style.display = 'none'
- 
- 
 })
 
-// Add eventlistener for the start game btn - US
+// Uncomment below to quickly set winners in local storage
+/*
+let test = [
+  { winningPlayer: 'Mikaela', nrMoves: 20 },
+  { winningPlayer: 'Anders', nrMoves: 15 },
+  { winningPlayer: 'Padma', nrMoves: 9 },
+  { winningPlayer: 'Patrik', nrMoves: 7 },
+  { winningPlayer: 'Bachar', nrMoves: 12 },
+  { winningPlayer: 'William', nrMoves: 14 },
+  { winningPlayer: 'Linda', nrMoves: 18 },
+  { winningPlayer: 'Anders', nrMoves: 6 },
+  { winningPlayer: 'Johan', nrMoves: 20 },
+  { winningPlayer: 'Calle', nrMoves: 11 },
+  { winningPlayer: 'Patricia', nrMoves: 6 },
+  { winningPlayer: 'Karin', nrMoves: 19 },
+  { winningPlayer: 'Henrik', nrMoves: 18 },
+  { winningPlayer: 'Putte', nrMoves: 13 },
+  { winningPlayer: 'Adam', nrMoves: 13 },
+  { winningPlayer: 'Therese', nrMoves: 4 }
+]
+setWinnersInLocalStorage()
+
+function setWinnersInLocalStorage() {
+  window.localStorage.setItem('winners', JSON.stringify(test))
+}
+*/
+// End of "set winners"
+
+// Add eventlistener for the start game btn and start game CPU btn - US
 startGameBtn.addEventListener('click', e => {
-  displayGame()
+  if (document.querySelector('#player1').value === '' || document.querySelector('#player2').value === '') {
+      document.getElementById("alertEnterNames").innerHTML= 'Please enter a name!'
+      document.getElementById("alertEnterNames").style.color="#333941"
+      setTimeout(function () {
+        document.getElementById("alertEnterNames").innerHTML= 'Enter Player Names'
+        document.getElementById("alertEnterNames").style.color=""
+      }, 1000)
+  } else {
+    player1 = document.querySelector('#player1').value
+    player2 = document.querySelector('#player2').value
+    displayGame()
+  }
 })
+
 startGameCPUBtn.addEventListener('click', e => {
-  displayGame()
+  if (document.querySelector('#player1-cpu').value === '') {
+    document.getElementById("alertEnterName").innerHTML= 'Please enter a name!'
+    document.getElementById("alertEnterName").style.color="#333941"
+    setTimeout(function () {
+      document.getElementById("alertEnterName").innerHTML= 'Enter your name'
+      document.getElementById("alertEnterName").style.color=""
+    }, 1000)
+  } else {
+    player1 = document.querySelector('#player1-cpu').value
+    player2 = 'computer'
+    displayGame()
+  }
 })
-function displayGame() {
-  player1 = document.querySelector('#player1').value
-  player2 = document.querySelector('#player2').value
+
+function displayGame () {
   document.querySelector('.enter-names').style.display = 'none'
   document.querySelector('.enter-names-cpu').style.display = 'none'
-  playerTurn.textContent = `${player1}' turn!` // - BO
+  if (player1.charAt(player1.length - 1) === 's') {
+    playerTurn.textContent = `${player1}' turn`
+  } else {
+    playerTurn.textContent = `${player1}'s turn`
+  }
   gameTable.style.display = 'flex'
 }
 
@@ -70,7 +119,8 @@ Array.prototype.forEach.call(tableCell, cell => {
   cell.id = cellId++ // Add an ID to the cell - US
 })
 
-function changeColor (e) {
+function changeColor(e) {
+  
   let column = 0
   // If it´s a click event set column to the cellIndex, otherwise it´s a random number - US
   if (e.target === undefined) {
@@ -78,7 +128,6 @@ function changeColor (e) {
   } else {
     column = e.target.cellIndex
   }
-
   const row = []
   // Don´t do anything if there is a winner - US
   if (!winner) {
@@ -99,7 +148,7 @@ function changeColor (e) {
             diagonalCheck1() ||
             diagonalCheck2()
           ) {
-            //- BO
+            // - BO
             playerTurn.textContent = `${player1} Wins` // - BO
             winner = true // - US
             // Set a timer and show the winner overlay - US
@@ -110,10 +159,17 @@ function changeColor (e) {
           } else if (drawCheck()) {
             // - BO
             playerTurn.textContent = 'Game is a draw'
-            winnerName.textContent = `No one won`
             winner = true
+            setTimeout(function () {
+              showWinnerOverlay('No one', 0)
+            }, 2000)
+            return winner
           } else {
-            playerTurn.textContent = `${player2}'s turn` // - BO
+            if (player2.charAt(player2.length - 1) === 's') {
+              playerTurn.textContent = `${player2}' turn`
+            } else {
+              playerTurn.textContent = `${player2}'s turn` // - BO
+            }
             currentPlayer = 2
             // If player 2 is the computer call this function again with a delay and a random number between 0-6 - US
             if (player2 === 'computer') {
@@ -141,10 +197,16 @@ function changeColor (e) {
             return winner
           } else if (drawCheck()) {
             playerTurn.textContent = 'Game is a draw'
-            winnerName.textContent = `No one won`
             winner = true
+            setTimeout(function () {
+              showWinnerOverlay('No one', 0)
+            }, 2000)
           } else {
-            playerTurn.textContent = `${player1}'s turn`
+            if (player1.charAt(player1.length - 1) === 's') {
+              playerTurn.textContent = `${player1}' turn`
+            } else {
+              playerTurn.textContent = `${player1}'s turn` // - BO
+            }
             currentPlayer = 1
             return currentPlayer
           }
@@ -153,23 +215,26 @@ function changeColor (e) {
     }
   }
 
-  //Set background color and shadow to the cell - US
+  // Set background color and shadow to the cell - US
   function setStyle (row, bgColor) {
     row[0].style.backgroundColor = bgColor
     row[0].style.boxShadow = '1px 3px 5px #4c928b'
   }
 
-  //Show winner overlay
+  // Show winner overlay
   function showWinnerOverlay (winningPlayer, nrMoves) {
     winnerOverlay.style.visibility = 'visible'
     winnerName.textContent = `${winningPlayer} Won!`
-    //Only save the result if the winning player is not computer
-    if (winningPlayer !== 'computer') {
+    if (nrMoves === 0) {
+      winnerHeading.textContent = 'It´s a draw'
+    }
+    // Only save the result if the winning player is not computer
+    if (player2 !== 'computer' && nrMoves !== 0) {
       saveResult({ winningPlayer, nrMoves })
     }
   }
 
-  //Get the localstorage and create a new array with the result if there are any - US
+  // Get the localstorage and create a new array with the result if there are any - US
   function saveResult (newWinner) {
     let winners = []
     if (window.localStorage.getItem('winners')) {
@@ -307,9 +372,9 @@ reset.addEventListener('click', () => {
     winnerOverlay.style.visibility = 'hidden'
     nrOfMoves1 = 0
     nrOfMoves2 = 0
-    // Set the current player back to 1 and change the text - BO
-    return currentPlayer === 1
-      ? (playerTurn.textContent = `${player1}'s turn`)
-      : (playerTurn.textContent = `${player2}'s turn`)
+    // Set the current player back to 1 and change the text - US
+    playerTurn.textContent = `${player1}'s turn`
+    currentPlayer === 1
   })
 })
+
