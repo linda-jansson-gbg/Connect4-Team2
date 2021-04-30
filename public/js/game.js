@@ -30,19 +30,43 @@ playerCPUBtn.addEventListener('click', e => {
   document.querySelector('.select__player_container_game').style.display = 'none'
 })
 
+// Uncomment below to quickly set winners in local storage
+/*
+let test = [
+  { winningPlayer: 'Mikaela', nrMoves: 20 },
+  { winningPlayer: 'Anders', nrMoves: 15 },
+  { winningPlayer: 'Padma', nrMoves: 9 },
+  { winningPlayer: 'Patrik', nrMoves: 7 },
+  { winningPlayer: 'Bachar', nrMoves: 12 },
+  { winningPlayer: 'William', nrMoves: 14 },
+  { winningPlayer: 'Linda', nrMoves: 18 },
+  { winningPlayer: 'Anders', nrMoves: 6 },
+  { winningPlayer: 'Johan', nrMoves: 20 },
+  { winningPlayer: 'Calle', nrMoves: 11 },
+  { winningPlayer: 'Patricia', nrMoves: 6 },
+  { winningPlayer: 'Karin', nrMoves: 19 },
+  { winningPlayer: 'Henrik', nrMoves: 18 },
+  { winningPlayer: 'Putte', nrMoves: 13 },
+  { winningPlayer: 'Adam', nrMoves: 13 },
+  { winningPlayer: 'Therese', nrMoves: 4 }
+]
+setWinnersInLocalStorage()
+
+function setWinnersInLocalStorage() {
+  window.localStorage.setItem('winners', JSON.stringify(test))
+}
+*/
+// End of "set winners"
+
 // Add eventlistener for the start game btn and start game CPU btn - US
 startGameBtn.addEventListener('click', e => {
   if (document.querySelector('#player1').value === '' || document.querySelector('#player2').value === '') {
-  
       document.getElementById("alertEnterNames").innerHTML= 'Please enter a name!'
       document.getElementById("alertEnterNames").style.color="#333941"
-
       setTimeout(function () {
         document.getElementById("alertEnterNames").innerHTML= 'Enter Player Names'
-       document.getElementById("alertEnterNames").style.color=""
-        
+        document.getElementById("alertEnterNames").style.color=""
       }, 1000)
- 
   } else {
     player1 = document.querySelector('#player1').value
     player2 = document.querySelector('#player2').value
@@ -51,7 +75,6 @@ startGameBtn.addEventListener('click', e => {
 })
 
 startGameCPUBtn.addEventListener('click', e => {
-  
   if (document.querySelector('#player1-cpu').value === '') {
     document.getElementById("alertEnterName").innerHTML= 'Please enter a name!'
     document.getElementById("alertEnterName").style.color="#333941"
@@ -336,10 +359,9 @@ reset.addEventListener('click', () => {
     winnerOverlay.style.visibility = 'hidden'
     nrOfMoves1 = 0
     nrOfMoves2 = 0
-    // Set the current player back to 1 and change the text - BO
-    return currentPlayer === 1
-      ? (playerTurn.textContent = `${player1}'s turn`)
-      : (playerTurn.textContent = `${player2}'s turn`)
+    // Set the current player back to 1 and change the text - US
+    playerTurn.textContent = `${player1}'s turn`
+    currentPlayer === 1
   })
 })
 
