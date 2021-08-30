@@ -3,14 +3,14 @@ body {
 }
 .highscore-header {
   font-size: 3em;
-  color: #20A899;
+  color: #20a899;
   padding: 2rem 0;
 }
 .highscore-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url(/assets/Artwork_rocket.svg) 5rem top no-repeat;
+  background: url('../assets/Artwork_rocket.svg') 5rem top no-repeat;
   width: inherit;
   margin-top: 2rem;
   justify-content: center;
@@ -73,7 +73,7 @@ body {
 }
 @media only screen and (max-width: 800px) {
   .highscore-page {
-    background: url(/assets/Artwork_rocket.svg) -6rem top no-repeat;
+    background: url('../assets/Artwork_rocket.svg') -6rem top no-repeat;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -81,10 +81,8 @@ body {
     width: 19rem;
   }
   .highscore-page {
-    background: url(/assets/Artwork_rocket.svg) -5rem -1rem no-repeat;
+    background: url('../assets/Artwork_rocket.svg') -5rem -1rem no-repeat;
     background-size: 45%;
     margin-top: 0;
   }
 }
-
-
